@@ -4,5 +4,5 @@
 
 Il n'est pas facile de trouver les YouTubeurs Francophones parlant de développement web via le moteur de recherche YouTube. Cette liste est là pour vous aider à trouver les pépites Françaises pas toujours bien référencées.
 
-*Vous aimez cette liste ? Appuyez sur le bouton étoile en haut à droite <img alt="bouton étoile github" src="images/star-github.jpg" height="20">. Merci !*
+*Vous aimez cette liste ? Appuyez sur le bouton étoile en haut à droite <img alt="bouton étoile github" src="images/star-github.jpg" height="25">. Merci !*
 
