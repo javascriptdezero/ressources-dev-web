@@ -8,7 +8,7 @@ Il n'est pas facile de trouver les YouTubeurs Francophones parlant de développe
 
 ## <img align="left" alt="bouton étoile github" src="images/lior-chamla.png" height="45">Lior Chamla
 
-<img align="left" alt="icône youtube" src="images/youtube.png" height="23">[YouTube](https://www.youtube.com/channel/UCS71mal_TkTW_PpZR9YLpIA/) | 4700 abonnés | :movie_camera: 37 vidéos | :eyes: 200 000 vues
+<img align="left" alt="icône youtube" src="images/youtube.png" height="23">[YouTube](https://www.youtube.com/channel/UCS71mal_TkTW_PpZR9YLpIA/) | 4700 abonnés | 37 vidéos | 200 000 vues
 --- | --- | --- | ---
 <img align="left" alt="icône twitter" src="images/twitter.png" height="23">[Twitter](https://twitter.com/LiiorC) | 1100 abonnés
 
