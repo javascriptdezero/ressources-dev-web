@@ -51,3 +51,11 @@ header p {
   color: white;
   font-size: 2rem;
 }
+
+#vignettes > img {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  -webkit-box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+}
