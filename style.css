@@ -9,9 +9,26 @@ Par exemple j'explique le choix des unités em, rem ou px la première fois que 
 Bonne lecture :).
 */
 
+/*****************
+ * Variables CSS *
+ *****************/
+
 :root {
   --couleur-bleu1-entete: #0094ff;
   --couleur-bleu2-entete: #58b9ff;
+}
+
+/**************************
+ * Déclarations générales *
+ **************************/
+
+/*
+LA propriété CSS pour vous simplifier la vie et éviter de faire des maths ;-).
+Plus d'infos sur : http://fr.learnlayout.com/box-sizing.html
+*/
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /**********
