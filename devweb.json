@@ -10,7 +10,20 @@
   {
     "url": "https://www.youtube.com/channel/UChhPkjgG1-iLUOmURGdgQrw",
     "tags": [
-      "HTML", "CSS", "JavaScript", "React", "Firebase", "PWA", "Sass", "Markdown", "Phaser.js", "jQuery", "design web", "conseils généraux pour débutants", "astuces de productivité", "outils de développement"
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Firebase",
+      "PWA",
+      "Sass",
+      "Markdown",
+      "Phaser.js",
+      "jQuery",
+      "design web",
+      "conseils généraux pour débutants",
+      "astuces de productivité",
+      "outils de développement"
     ]
   },
   {
@@ -20,7 +33,10 @@
     ]
   },
   { "url": "https://www.youtube.com/channel/UCeZIdBQiLoH3zi-VCHwi5VQ", "tags": [""] },
-  { "url": "https://www.youtube.com/channel/UCLOAPb7ATQUs_nDs9ViLcMw", "tags": ["vlog", "conseils de dev", "formation", "humour"] },
+  {
+    "url": "https://www.youtube.com/channel/UCLOAPb7ATQUs_nDs9ViLcMw",
+    "tags": ["vlog", "conseils de dev", "formation", "humour"]
+  },
   { "url": "https://www.youtube.com/channel/UChyW1pwcQT2RA4Q2onfNfpg", "tags": [""] },
   { "url": "https://www.youtube.com/channel/UC7BNBNLwMF8GjgXLDP8PWQw", "tags": [""] },
   { "url": "https://www.youtube.com/channel/UCjDg7LaaMzmuhj6I1jTzb1Q", "tags": [""] },
@@ -31,5 +47,7 @@
   { "url": "https://www.youtube.com/channel/UCgJERWtcvu-JiPq5wBkYF1g", "tags": [""] },
   { "url": "https://www.youtube.com/channel/UCsFoQ4A9CZbF3qag317uZZQ", "tags": [""] },
   { "url": "https://www.youtube.com/channel/UCUSRY5EcZAhSbz1Q1QuQw0w", "tags": [""] },
-  { "url": "https://www.youtube.com/channel/UCIHVyohXw6j2T-83-uLngEg", "tags": [""] }
+  { "url": "https://www.youtube.com/channel/UCIHVyohXw6j2T-83-uLngEg", "tags": [""] },
+  { "url": "https://www.youtube.com/channel/UCFfJNxWTuD8UCnG5JNSiqkw", "tags": [""] },
+  { "url": "https://www.youtube.com/channel/UCJFSN6epvy4HGjujPhuhGvg", "tags": [""] }
 ]
