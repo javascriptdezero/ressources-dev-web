@@ -14,18 +14,22 @@ Bonne lecture :).
   --couleur-bleu2-entete: #58b9ff;
 }
 
+/**********
+ * Entête *
+ **********/
+
 header {
   background: var(--couleur-bleu1-entete);
   background: linear-gradient(130.4deg, var(--couleur-bleu1-entete) 18.7%, var(--couleur-bleu2-entete) 86.17%);
   /* J'utilise des px car peu importe la taille de la police je veux que ces valeurs soient fixes. */
   padding: 24px 32px 32px 32px;
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 header h1 {
   text-align: center;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen, Ubuntu, Cantarell, "Open Sans",
-    "Helvetica Neue", sans-serif;
   font-weight: normal;
   color: white;
   font-size: 2rem;
@@ -41,4 +45,9 @@ h1 img {
   margin-right: 0.3em;
   vertical-align: middle;
   height: 1.2em;
+}
+
+header p {
+  color: white;
+  font-size: 2rem;
 }
