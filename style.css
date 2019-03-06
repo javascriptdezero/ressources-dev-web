@@ -1,3 +1,11 @@
+/*
+Il n'existe pas "une seule" manière de faire du CSS, ici je vous présente ma façon de
+créer ce site mais il peut en exister beaucoup d'autres ! Je vous explique les choix
+que j'ai fait et pourquoi dans les commentaires.
+
+Bonne lecture :).
+*/
+
 :root {
   --couleur-bleu1-entete: #0094ff;
   --couleur-bleu2-entete: #58b9ff;
@@ -6,5 +14,15 @@
 header {
   background: var(--couleur-bleu1-entete);
   background: linear-gradient(130.4deg, var(--couleur-bleu1-entete) 18.7%, var(--couleur-bleu2-entete) 86.17%);
-  padding: 32px;
+  padding: 24px 32px 32px 32px;
+}
+
+header h1 {
+  text-align: center;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
+  font-weight: normal;
+  font-size: 36px;
+  color: white;
 }
