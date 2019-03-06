@@ -1,0 +1,34 @@
+[
+  {
+    "url": "https://www.youtube.com/channel/UCMzJVrWeaKUotLPWTdx6HuQ",
+    "tags": ["JavaScript"]
+  },
+  {
+    "url": "https://www.youtube.com/channel/UCS71mal_TkTW_PpZR9YLpIA",
+    "tags": ["Symfony", "PHP", "HTML", "CSS", "JavaScript", "algorithmie (freeCodeCamp)"]
+  },
+  {
+    "url": "https://www.youtube.com/channel/UChhPkjgG1-iLUOmURGdgQrw",
+    "tags": [
+      "HTML", "CSS", "JavaScript", "React", "Firebase", "PWA", "Sass", "Markdown", "Phaser.js", "jQuery", "design web", "conseils généraux pour débutants", "astuces de productivité", "outils de développement"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/channel/UCj_iGliGCkLcHSZ8eqVNPDQ",
+    "tags": [
+      "Tout ! HTML, CSS, JavaScript, PHP, CakePHP, NodeJS, VueJS, Symfony, React, Wordpress, Bootstrap, application mobile, Git, Less, Sass, Compass, outils de développement, jQuery, MySQL, Markdown, Algorithmie, Angular, SVG, POO en PHP, Laravel, Tests unitaires, Ruby, Linux, Webpack et d'autres !"
+    ]
+  },
+  { "url": "https://www.youtube.com/channel/UCeZIdBQiLoH3zi-VCHwi5VQ", "tags": [""] },
+  { "url": "https://www.youtube.com/channel/UCLOAPb7ATQUs_nDs9ViLcMw", "tags": ["vlog", "conseils de dev", "formation", "humour"] },
+  { "url": "https://www.youtube.com/channel/UChyW1pwcQT2RA4Q2onfNfpg", "tags": [""] },
+  { "url": "https://www.youtube.com/channel/UC7BNBNLwMF8GjgXLDP8PWQw", "tags": [""] },
+  { "url": "https://www.youtube.com/channel/UCjDg7LaaMzmuhj6I1jTzb1Q", "tags": [""] },
+  { "url": "https://www.youtube.com/channel/UC0FIKAE7xORm6Y91kWbg4cA", "tags": [""] },
+  { "url": "https://www.youtube.com/channel/UCftI9Qw4HJXKVNzhuqZM_2w", "tags": [""] },
+  { "url": "https://www.youtube.com/channel/UCzuaB4F2znrMggxcwUuVhAw", "tags": [""] },
+  { "url": "https://www.youtube.com/channel/UC61GK_nOLSJdzAK5hoR2mJA", "tags": [""] },
+  { "url": "https://www.youtube.com/channel/UCgJERWtcvu-JiPq5wBkYF1g", "tags": [""] },
+  { "url": "https://www.youtube.com/channel/UCsFoQ4A9CZbF3qag317uZZQ", "tags": [""] },
+  { "url": "https://www.youtube.com/channel/UCUSRY5EcZAhSbz1Q1QuQw0w", "tags": [""] }
+]
