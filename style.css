@@ -1,7 +1,10 @@
 /*
-Il n'existe pas "une seule" manière de faire du CSS, ici je vous présente ma façon de
+Il n'existe pas "une seule" manière de faire du CSS, je vous présente ma façon de
 créer ce site mais il peut en exister beaucoup d'autres ! Je vous explique les choix
-que j'ai fait et pourquoi dans les commentaires.
+que j'ai fait dans les commentaires.
+
+Je n'explique en général qu'une seule fois chaque décision pour éviter d'être redondant.
+Par exemple j'explique le choix des unités em, rem ou px la première fois que je les utilise.
 
 Bonne lecture :).
 */
@@ -14,6 +17,7 @@ Bonne lecture :).
 header {
   background: var(--couleur-bleu1-entete);
   background: linear-gradient(130.4deg, var(--couleur-bleu1-entete) 18.7%, var(--couleur-bleu2-entete) 86.17%);
+  /* J'utilise des px car peu importe la taille de la police je veux que ces valeurs soient fixes. */
   padding: 24px 32px 32px 32px;
 }
 
@@ -25,4 +29,16 @@ header h1 {
   font-weight: normal;
   color: white;
   font-size: 2rem;
+}
+
+h1 img {
+  /*
+  Ici j'utilise l'unité em pour que la marge à droite et la hauteur de l'icône YouTube soit
+  directement proportionnelle à la taille de police de h1. Comme ça l'icône reste toujours
+  cohérente avec la taille du titre, peu importe les préférences utilisateurs de taille de
+  police de caractère (qui est par défaut 16px).
+  */
+  margin-right: 0.3em;
+  vertical-align: middle;
+  height: 1.2em;
 }
