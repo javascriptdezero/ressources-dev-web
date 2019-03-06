@@ -1,0 +1,10 @@
+:root {
+  --couleur-bleu1-entete: #0094ff;
+  --couleur-bleu2-entete: #58b9ff;
+}
+
+#entete {
+  background: var(--couleur-bleu1-entete);
+  background: linear-gradient(130.4deg, var(--couleur-bleu1-entete) 18.7%, var(--couleur-bleu2-entete) 86.17%);
+  padding: 32px;
+}

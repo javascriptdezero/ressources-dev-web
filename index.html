@@ -12,10 +12,18 @@
       crossorigin="anonymous"
     />
 
+    <!--
+      On fait en sorte que le design apparaisse de la même façon sur tous les navigateurs.
+      C'est la façon moderne d'appliquer un reset CSS, j'utilise Normalize.css pour ça.
+      Plus d'infos sur https://necolas.github.io/normalize.css/
+     -->
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="style.css" />
+
     <title>Titre</title>
   </head>
   <body>
-    <div>
+    <div id="entete">
       <h1>Les chaînes YouTube Françaises sur le développement web</h1>
 
       <p>Pas facile de trouver les meilleurs développeurs web Français sur YouTube...</p>
