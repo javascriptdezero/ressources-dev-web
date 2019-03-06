@@ -1,17 +1,126 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Titre</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-  <ul id="liste">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
 
-  </ul>
-  
-  <script src="script.js"></script>
-</body>
+    <title>Titre</title>
+  </head>
+  <body>
+    <div>
+      <h1>Les chaînes YouTube Françaises sur le développement web</h1>
+
+      <p>Pas facile de trouver les meilleurs développeurs web Français sur YouTube...</p>
+      <p>Ne cherchez plus.<br />Je les ai listé pour vous.</p>
+
+      <div id="vignettes">
+        <img src="images/anthony-welc.jpg" alt="Anthony Welc" />
+        <img src="images/apprendre-a-coder.jpg" alt="Apprendre à coder" />
+        <img src="images/benjamin-code.jpg" alt="Benjamin Code" />
+        <img src="images/dev-theory.jpg" alt="Dev Theory" />
+        <img src="images/developpeur-libre.jpg" alt="Développeur Libre" />
+        <img src="images/god-of-macro.jpg" alt="GodOfMacro" />
+        <img src="images/grafikart.jpg" alt="Grafikart" />
+        <img src="images/harry-jmg.jpg" alt="Harry JMG" />
+        <img src="images/graven.jpg" alt="Graven" />
+        <img src="images/les-teachers-du-net.jpg" alt="Les teachers du Net" />
+        <img src="images/lior-chamla.jpg" alt="Lior Chamla" />
+        <img src="images/mike.jpg" alt="Mike Codeur" />
+        <img src="images/pierre-giraud.jpg" alt="Pierre Giraud" />
+        <img src="images/pierre-terrat.jpg" alt="Pierre Terrat" />
+        <img src="images/primfx.jpg" alt="PrimFX" />
+        <img src="images/thibaud-dauce.jpg" alt="Thibaud Dauce" />
+      </div>
+    </div>
+
+    <div>
+      <div class="mini-titre">
+        <span>Make it grow</span>
+        <p>
+          Ajoutez votre chaîne préférée ou demandez une fonctionnalité : un tweet sur
+          <a href="https://twitter.com/jeremymouzin">@JeremyMouzin</a> me suffira
+        </p>
+      </div>
+      <div class="mini-titre">
+        <span>Merci !</span>
+        <p>
+          Merci à tous ceux qui ont déjà partagé leurs chaînes préférées et m'ont fait des retours constructifs sur ce
+          site !
+        </p>
+      </div>
+      <div class="mini-titre">
+        <span>Share the love</span>
+        <p>Vous aimez cette liste ? Vous voulez la voir grossir ? Alors partagez-là autour de vous ! Merci.</p>
+      </div>
+      <div class="mini-titre">
+        <span>Coming soon</span>
+        <p>
+          Filtrage par langage, framework, outil. Classement par nombre de vues, nombre de vidéos et d'abonnés. Ajout
+          des comptes Twitter.
+        </p>
+      </div>
+      <div class="mini-titre">
+        <span>Un affichage juste</span>
+        <p>
+          La liste est affichée de façon aléatoire à chaque chargement pour permettre aux chaînes peu connues de se
+          faire connaître.
+        </p>
+        <p>(Car on ne lit jamais une longue liste toute entière, seulement le début)</p>
+      </div>
+      <div class="mini-titre">
+        <span>Un code à vocation pédagogique</span>
+        <p>L'intégralité du code source de ce site a été rédigé et commenté en Français dans un but pédagogique.</p>
+      </div>
+    </div>
+
+    <div>
+      <img src="images/jeremy-mouzin.jpg" alt="Jérémy Mouzin" />
+      <div>
+        <span>Votre serviteur</span>
+        <p>
+          Je suis le créateur de la formation <a href="https://www.javascriptdezero.com">JavaScript de Zéro</a> qui vous
+          apprend à programmer en vidéo sans connaissance préalable.
+        </p>
+      </div>
+    </div>
+
+    <ul id="liste">
+      <li>
+        <div>
+          <a href="https://www.youtube.com/channel/UCS71mal_TkTW_PpZR9YLpIA" target="_blank"
+            ><img src="images/lior-chamla.jpg" alt="Lior Chamla"
+          /></a>
+          <a href="https://www.youtube.com/channel/UCS71mal_TkTW_PpZR9YLpIA" target="_blank">Lior Chamla</a>
+          <ul>
+            <li><i class="fab fa-youtube"></i><span class="nombre">4 811</span> abonnés</li>
+            <li><i class="fas fa-video"></i><span class="nombre">37</span> vidéos</li>
+            <li><i class="fas fa-eye"></i><span class="nombre">204 408</span> vues</li>
+          </ul>
+          <p>
+            Passionné de développement web, je publie ici des tutoriels, des formations.<br /><br />Je suis développeur
+            web depuis 10 ans et formateur dans différentes écoles et groupes de formation (CESI Alternances, eXia,,
+            3WAcademy, WebForce3, ...), si vous aimez le développement web, n'hésitez pas à vous abonner ;-)
+          </p>
+          <ul>
+            <li class="tag">Symbony</li>
+            <li class="tag">PHP</li>
+            <li class="tag">HTML</li>
+            <li class="tag">CSS</li>
+            <li class="tag">JavaScript</li>
+            <li class="tag">Algorithmie</li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+
+    <script src="script.js"></script>
+  </body>
 </html>
