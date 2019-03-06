@@ -1,8 +1,6 @@
 # Explorez mon code source !
 
-Le site listant les chaînes YouTube Françaises sur le développement web a une double vocation
-
-## Un projet à double vocation : utile et pédagogique
+## Un projet à double vocation : utilité et pédagogie
 
 Il est utile car il n'est pas facile de trouver des développeurs web Français juste via le moteur de recherche YouTube.
 
@@ -28,7 +26,7 @@ Je vous invite donc vivement à user et abuser du clic droit -> Afficher le code
 
 ## Un dépôt GitHub propre et honnête
 
-J'ai essayé de commiter souvent mon code source pour que vous puissiez voir l'évolution du site internet, comment j'ai créé petit à petit les fonctionnalités.
+J'ai essayé de commiter souvent mon code source pour que vous puissiez voir l'évolution du site internet, comment j'ai créé petit à petit les fonctionnalités. C'est une bonne pratique de commiter de façon "atomique" chaque changement pour faciliter l'isolation des bugs et bien séparer les modifications les unes des autres (pour faire un `git bisect` si besoin par exemple et trouver le commit coupable !).
 
 Je n'ai pas essayé d'effacer mes erreurs, car il est important de comprendre que même les professionnels font des erreurs. Trop souvent les débutants pensent qu'on développe "en une fois" un morceau de code et du premier coup, ce qui est totalement faux.
 
