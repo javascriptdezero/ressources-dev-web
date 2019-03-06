@@ -14,8 +14,14 @@ Bonne lecture :).
  *****************/
 
 :root {
+  /* Couleurs */
   --couleur-bleu1-entete: #0094ff;
   --couleur-bleu2-entete: #58b9ff;
+
+  /* Vignettes pour l'entête */
+  --vignettes-nombre-par-ligne: 4;
+  --vignettes-taille: 80px;
+  --vignettes-marge: 4px;
 }
 
 /**************************
@@ -70,10 +76,22 @@ header p {
   font-size: 2rem;
 }
 
+#vignettes {
+  width: calc(var(--vignettes-nombre-par-ligne) * (var(--vignettes-taille) + 2 * var(--vignettes-marge)));
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
 #vignettes > img {
   border-radius: 50%;
   width: 80px;
   height: 80px;
+  margin: 4px;
   -webkit-box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
 }
