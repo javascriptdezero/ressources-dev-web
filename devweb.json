@@ -29,26 +29,71 @@
   {
     "url": "https://www.youtube.com/channel/UCj_iGliGCkLcHSZ8eqVNPDQ",
     "tags": [
-      "Tout ! HTML, CSS, JavaScript, PHP, CakePHP, NodeJS, VueJS, Symfony, React, Wordpress, Bootstrap, application mobile, Git, Less, Sass, Compass, outils de développement, jQuery, MySQL, Markdown, Algorithmie, Angular, SVG, POO en PHP, Laravel, Tests unitaires, Ruby, Linux, Webpack et d'autres !"
+      "HTML, CSS, JavaScript, PHP, CakePHP, NodeJS, VueJS, Symfony, React, Wordpress, Bootstrap, application mobile, Git, Less, Sass, Compass, outils de développement, jQuery, MySQL, Markdown, Algorithmie, Angular, SVG, POO en PHP, Laravel, Tests unitaires, Ruby, Linux, Webpack et d'autres !"
     ]
   },
-  { "url": "https://www.youtube.com/channel/UCeZIdBQiLoH3zi-VCHwi5VQ", "tags": [""] },
+  {
+    "url": "https://www.youtube.com/channel/UCeZIdBQiLoH3zi-VCHwi5VQ",
+    "tags": [""]
+  },
   {
     "url": "https://www.youtube.com/channel/UCLOAPb7ATQUs_nDs9ViLcMw",
     "tags": ["vlog", "conseils de dev", "formation", "humour"]
   },
-  { "url": "https://www.youtube.com/channel/UChyW1pwcQT2RA4Q2onfNfpg", "tags": [""] },
-  { "url": "https://www.youtube.com/channel/UC7BNBNLwMF8GjgXLDP8PWQw", "tags": [""] },
-  { "url": "https://www.youtube.com/channel/UCjDg7LaaMzmuhj6I1jTzb1Q", "tags": [""] },
-  { "url": "https://www.youtube.com/channel/UC0FIKAE7xORm6Y91kWbg4cA", "tags": [""] },
-  { "url": "https://www.youtube.com/channel/UCftI9Qw4HJXKVNzhuqZM_2w", "tags": [""] },
-  { "url": "https://www.youtube.com/channel/UCzuaB4F2znrMggxcwUuVhAw", "tags": [""] },
-  { "url": "https://www.youtube.com/channel/UC61GK_nOLSJdzAK5hoR2mJA", "tags": [""] },
-  { "url": "https://www.youtube.com/channel/UCgJERWtcvu-JiPq5wBkYF1g", "tags": [""] },
-  { "url": "https://www.youtube.com/channel/UCsFoQ4A9CZbF3qag317uZZQ", "tags": [""] },
-  { "url": "https://www.youtube.com/channel/UCUSRY5EcZAhSbz1Q1QuQw0w", "tags": [""] },
-  { "url": "https://www.youtube.com/channel/UCIHVyohXw6j2T-83-uLngEg", "tags": [""] },
-  { "url": "https://www.youtube.com/channel/UCFfJNxWTuD8UCnG5JNSiqkw", "tags": [""] },
-  { "url": "https://www.youtube.com/channel/UCJFSN6epvy4HGjujPhuhGvg", "tags": [""] },
-  { "url": "https://www.youtube.com/channel/UCXYs_tVa-VFm5f6bWrPybhA", "tags": [""] }
+  {
+    "url": "https://www.youtube.com/channel/UChyW1pwcQT2RA4Q2onfNfpg",
+    "tags": [""]
+  },
+  {
+    "url": "https://www.youtube.com/channel/UC7BNBNLwMF8GjgXLDP8PWQw",
+    "tags": [""]
+  },
+  {
+    "url": "https://www.youtube.com/channel/UCjDg7LaaMzmuhj6I1jTzb1Q",
+    "tags": [""]
+  },
+  {
+    "url": "https://www.youtube.com/channel/UC0FIKAE7xORm6Y91kWbg4cA",
+    "tags": [""]
+  },
+  {
+    "url": "https://www.youtube.com/channel/UCftI9Qw4HJXKVNzhuqZM_2w",
+    "tags": [""]
+  },
+  {
+    "url": "https://www.youtube.com/channel/UCzuaB4F2znrMggxcwUuVhAw",
+    "tags": [""]
+  },
+  {
+    "url": "https://www.youtube.com/channel/UC61GK_nOLSJdzAK5hoR2mJA",
+    "tags": [""]
+  },
+  {
+    "url": "https://www.youtube.com/channel/UCgJERWtcvu-JiPq5wBkYF1g",
+    "tags": [""]
+  },
+  {
+    "url": "https://www.youtube.com/channel/UCsFoQ4A9CZbF3qag317uZZQ",
+    "tags": [""]
+  },
+  {
+    "url": "https://www.youtube.com/channel/UCUSRY5EcZAhSbz1Q1QuQw0w",
+    "tags": [""]
+  },
+  {
+    "url": "https://www.youtube.com/channel/UCIHVyohXw6j2T-83-uLngEg",
+    "tags": [""]
+  },
+  {
+    "url": "https://www.youtube.com/channel/UCFfJNxWTuD8UCnG5JNSiqkw",
+    "tags": [""]
+  },
+  {
+    "url": "https://www.youtube.com/channel/UCJFSN6epvy4HGjujPhuhGvg",
+    "tags": [""]
+  },
+  {
+    "url": "https://www.youtube.com/channel/UCXYs_tVa-VFm5f6bWrPybhA",
+    "tags": [""]
+  }
 ]
