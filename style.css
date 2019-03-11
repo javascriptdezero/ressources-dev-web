@@ -285,7 +285,6 @@ dans le CSS via le pseudo élément ::before.
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 214px;
   margin: 0 auto;
   max-width: 720px;
 }
@@ -305,10 +304,45 @@ dans le CSS via le pseudo élément ::before.
 }
 
 #votre-serviteur .bloc-info p {
-  line-height: 1.2;
   margin-bottom: 0;
 }
 
 #votre-serviteur .bloc-info span::before {
   content: "👋";
+}
+
+/*****************************************************
+ * Responsive design de la section "votre serviteur" *
+ *****************************************************/
+
+@media (max-width: 750px) {
+  #votre-serviteur .contenu {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-line-pack: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    max-width: 550px;
+  }
+
+  #votre-serviteur .contenu img {
+    width: 250px;
+    height: 250px;
+    margin: 32px 32px 32px 16px;
+  }
+
+  #votre-serviteur .bloc-info {
+    -ms-flex-preferred-size: initial;
+    flex-basis: initial;
+    padding: 0 16px 32px 16px;
+  }
+
+  #votre-serviteur .bloc-info span {
+    text-align: center;
+    display: block;
+    margin-left: -24px;
+  }
 }
