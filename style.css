@@ -1,12 +1,31 @@
 /*
-Il n'existe pas "une seule" manière de faire du CSS, je vous présente ma façon de
-créer ce site mais il peut en exister beaucoup d'autres ! Je vous explique les choix
+Il n'existe pas "une seule" manière de faire un site web et son CSS. Je vous présente ma façon
+de créer ce site mais il peut en exister beaucoup d'autres ! Je vous explique les choix
 que j'ai fait dans les commentaires.
 
 Je n'explique en général qu'une seule fois chaque décision pour éviter d'être redondant.
 Par exemple j'explique le choix des unités em, rem ou px la première fois que je les utilise.
 
-Bonne lecture :).
+J'ai une approche en cycles courts itératifs lorsque je produis du CSS. Qu'est-ce que ça veut dire ?
+
+Eh bien je répète le cycle suivant pour une petite partie du design :
+
+1. Je sélectionne la partie du design à faire, en général je commence par le
+haut du site et je termine par le bas.
+2. J'écris le CSS qui va bien pour coller au design voulu sur cette partie.
+3. Je teste le côté responsive sur cette partie et j'ajuste le CSS si besoin (media-queries).
+4. Je factorise / remanie le nouveau code avec le code déjà présent.
+5. Je reteste le côté responsive pour voir si j'ai rien cassé à l'étape d'avant :).
+6. Je retourne à l'étape 1.
+
+Je préfère m'attaquer à une partie l'une après l'autre pour le côté responsive car le code CSS
+que j'ai utilisé pour faire cette partie du design est frais dans ma mémoire. Si vous faites
+tout le design d'un coup et que vous faites le côté responsive à la fin, il faut vous remémorer
+votre code pour chaque partie, c'est moins efficace selon moi.
+
+Par ailleurs, personne n'est parfait, donc si vous trouvez des bogues, dites-le moi !
+
+Merci et bonne lecture :).
 */
 
 /*****************
@@ -49,7 +68,7 @@ header {
   font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen, Ubuntu, Cantarell, "Open Sans",
     "Helvetica Neue", sans-serif;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  height: 550px;
+  min-height: 550px;
 }
 
 header h1 {
@@ -57,6 +76,7 @@ header h1 {
   font-weight: normal;
   color: white;
   font-size: 2rem;
+  line-height: 1.4em;
 }
 
 h1 img {
@@ -71,20 +91,46 @@ h1 img {
   height: 1.2em;
 }
 
+/*
+J'utilise flexbox pour centrer verticalement le texte par rapport aux vignettes.
+Voir : https://css-tricks.com/centering-css-complete-guide/
+*/
 header p {
   color: white;
   font-size: 2rem;
+  line-height: 1.4em;
+  padding-right: 64px;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
-#vignettes {
-  width: calc(var(--vignettes-nombre-par-ligne) * (var(--vignettes-taille) + 2 * var(--vignettes-marge)));
+#slogan {
+  height: calc(var(--vignettes-nombre-par-ligne) * (var(--vignettes-taille) + 2 * var(--vignettes-marge)));
+  max-width: 1100px;
+  margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+#vignettes {
+  width: calc(var(--vignettes-nombre-par-ligne) * (var(--vignettes-taille) + 2 * var(--vignettes-marge)));
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
 }
 
 #vignettes > img {
@@ -94,4 +140,29 @@ header p {
   margin: 4px;
   -webkit-box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/*********************
+ * Responsive design *
+ *********************/
+
+/* On cache les vignettes et on centre le slogan */
+@media (max-width: 950px) {
+  #vignettes {
+    display: none;
+  }
+
+  #slogan {
+    height: initial;
+  }
+
+  header {
+    min-height: initial;
+  }
+
+  header p {
+    text-align: center;
+    padding-right: 0;
+    font-size: 1.6rem;
+  }
 }
