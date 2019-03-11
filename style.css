@@ -203,6 +203,10 @@ header p {
   color: #a5a5a5;
 }
 
+.bloc-info p {
+  margin-top: 16px;
+}
+
 #coming-soon {
   background-color: #d9f2e3;
 }
