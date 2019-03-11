@@ -142,9 +142,9 @@ header p {
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-/*********************
- * Responsive design *
- *********************/
+/*********************************
+ * Responsive design de l'entête *
+ *********************************/
 
 /* On cache les vignettes et on centre le slogan */
 @media (max-width: 950px) {
@@ -165,4 +165,87 @@ header p {
     padding-right: 0;
     font-size: 1.6rem;
   }
+}
+
+/****************
+ * Blocs d'info *
+ ****************/
+
+.infos {
+  max-width: 1200px;
+  margin: 48px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  font-family: Roboto;
+}
+
+.bloc-info {
+  max-width: 550px;
+  margin: 8px;
+  padding: 16px 16px 0 16px;
+  border-radius: 8px;
+  font-size: 24px;
+  line-height: 1.4;
+  color: #4e616c;
+}
+
+.bloc-info span {
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #a5a5a5;
+}
+
+#coming-soon {
+  background-color: #d9f2e3;
+}
+
+#coming-soon span {
+  color: #37a465;
+}
+
+#mini-texte {
+  font-size: 12px;
+  color: #a6a6a6;
+}
+
+/*
+À la base j'avais mis l'icône directement dans le HTML comme ça "😘 Merci !".
+Le problème c'est que je ne peux pas gérer précisément la distance entre le
+texte et l'icône, niveau design c'est pas top.
+
+Par ailleurs c'est un élément de décoration et pas de contenu à proprement
+parlé. Donc il a plutôt sa place dans le CSS. J'ai donc préféré le mettre
+dans le CSS via le pseudo élément ::before.
+*/
+.bloc-info span::before {
+  margin-right: 4px;
+}
+
+#make-it-grow span::before {
+  content: "🌱";
+}
+
+#merci span::before {
+  content: "😘";
+}
+
+#share-the-love span::before {
+  content: "❤️";
+}
+
+#coming-soon span::before {
+  content: "👌";
+}
+
+#un-affichage-juste span::before {
+  content: "⚖️";
+}
+
+#vocation-pedagogique span::before {
+  content: "✌️";
 }
