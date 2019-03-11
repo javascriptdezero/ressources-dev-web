@@ -41,6 +41,13 @@ Merci et bonne lecture :).
   --vignettes-nombre-par-ligne: 4;
   --vignettes-taille: 80px;
   --vignettes-marge: 4px;
+
+  /* Blocs d'info */
+  --infos-padding: 8px;
+  --blocs-info-padding: 16px;
+
+  /* Valeurs générales */
+  --largeur-max-contenu: 1200px;
 }
 
 /**************************
@@ -110,7 +117,7 @@ header p {
 
 #slogan {
   height: calc(var(--vignettes-nombre-par-ligne) * (var(--vignettes-taille) + 2 * var(--vignettes-marge)));
-  max-width: 1100px;
+  max-width: var(--largeur-max-contenu);
   margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -138,8 +145,8 @@ header p {
 
 #vignettes > img {
   border-radius: 50%;
-  width: 80px;
-  height: 80px;
+  width: var(--vignettes-taille);
+  height: var(--vignettes-taille);
   margin: 4px;
   -webkit-box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
@@ -175,9 +182,9 @@ header p {
  ****************/
 
 .infos {
-  max-width: 1200px;
+  max-width: calc(var(--largeur-max-contenu) + 2 * (var(--blocs-info-padding) + var(--infos-padding)));
   margin: 48px auto 32px auto;
-  padding: 0 16px;
+  padding: 0 var(--infos-padding);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -190,7 +197,7 @@ header p {
   -ms-flex: 1;
   flex: 1 1 400px;
   margin: 8px;
-  padding: 16px 16px 0 16px;
+  padding: var(--blocs-info-padding) var(--blocs-info-padding) 0 var(--blocs-info-padding);
   border-radius: 8px;
   font-size: 24px;
   line-height: 1.4;
@@ -337,7 +344,7 @@ dans le CSS via le pseudo élément ::before.
   #votre-serviteur .bloc-info {
     -ms-flex-preferred-size: initial;
     flex-basis: initial;
-    padding: 0 16px 32px 16px;
+    padding: 0 var(--blocs-info-padding) 32px var(--blocs-info-padding);
   }
 
   #votre-serviteur .bloc-info span {
