@@ -176,14 +176,13 @@ header p {
 
 .infos {
   max-width: 1200px;
-  margin: 48px auto;
+  margin: 48px auto 32px auto;
   padding: 0 16px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  font-family: Roboto;
 }
 
 .bloc-info {
@@ -269,7 +268,47 @@ dans le CSS via le pseudo élément ::before.
   .infos {
     max-width: 600px;
     -webkit-box-flex: 1;
-        -ms-flex: 1 1 550px;
-            flex: 1 1 550px;
+    -ms-flex: 1 1 550px;
+    flex: 1 1 550px;
   }
+}
+
+/*****************************
+ * Section "votre serviteur" *
+ *****************************/
+
+#votre-serviteur {
+  background: #f5f5f5;
+}
+
+#votre-serviteur .contenu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 214px;
+  margin: 0 auto;
+  max-width: 720px;
+}
+
+#votre-serviteur .contenu img {
+  -webkit-box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin: 32px 32px 32px 16px;
+}
+
+#votre-serviteur .bloc-info {
+  margin: auto 16px;
+  padding: 0;
+}
+
+#votre-serviteur .bloc-info p {
+  line-height: 1.2;
+  margin-bottom: 0;
+}
+
+#votre-serviteur .bloc-info span::before {
+  content: "👋";
 }
