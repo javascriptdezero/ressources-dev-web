@@ -50,6 +50,8 @@ Merci et bonne lecture :).
 
   /* Valeurs générales */
   --largeur-max-contenu: 1200px;
+  --taille-logo-chaine: 150px;
+  --ombre-logo-chaine: 0px 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 /**************************
@@ -299,11 +301,11 @@ dans le CSS via le pseudo élément ::before.
 }
 
 #votre-serviteur .contenu img {
-  -webkit-box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.4);
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: var(--ombre-logo-chaine);
+  box-shadow: var(--ombre-logo-chaine);
   border-radius: 50%;
-  width: 150px;
-  height: 150px;
+  width: var(--taille-logo-chaine);
+  height: var(--taille-logo-chaine);
   margin: 32px 32px 32px 16px;
 }
 
