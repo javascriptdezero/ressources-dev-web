@@ -217,7 +217,7 @@ header p {
 }
 
 .bloc-info p {
-  margin-top: 16px;
+  margin: 16px 0;
 }
 
 #coming-soon {
