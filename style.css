@@ -208,7 +208,7 @@ header p {
   line-height: 1.4;
 }
 
-.bloc-info span {
+.mini-titre {
   font-weight: bold;
   font-size: 18px;
   letter-spacing: 0.1em;
@@ -381,7 +381,8 @@ dans le CSS via le pseudo élément ::before.
   border-radius: 16px;
 }
 
-#liste > li > div > span {
+/* Statistiques, icône et présentation de la chaîne */
+#liste .nom-chaine {
   display: block;
   text-align: center;
   font-size: 36px;
@@ -392,7 +393,7 @@ dans le CSS via le pseudo élément ::before.
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  max-height: var(--taille-logo-chaine);
+  overflow: scroll;
 }
 
 .presentation-chaine img {
@@ -419,11 +420,11 @@ dans le CSS via le pseudo élément ::before.
   padding: 16px 0;
   list-style-type: none;
   margin: 0 16px;
-  min-height: var(--taille-logo-chaine);
+  max-height: var(--taille-logo-chaine);
   min-width: 250px;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .statistiques-chaine li {
@@ -443,3 +444,28 @@ dans le CSS via le pseudo élément ::before.
   color: var(--couleur-texte-primaire);
 }
 
+/* Tags de la chaîne */
+
+#liste span.mini-titre {
+  margin-left: calc(var(--taille-logo-chaine) + 32px);
+}
+
+#liste > li > div > ul {
+  margin-left: calc(var(--taille-logo-chaine) + 24px);
+  margin-top: 16px;
+  padding-left: 0;
+}
+
+#liste ul li.tag {
+  display: inline-block;
+  color: #6FCF97;
+  font-weight: bold;
+  line-height: normal;
+  font-size: 18px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-right: 16px;
+  border: 1px solid;
+  padding: 8px;
+  border-radius: 6px;
+}
