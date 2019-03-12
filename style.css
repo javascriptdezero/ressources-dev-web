@@ -357,3 +357,84 @@ dans le CSS via le pseudo élément ::before.
     margin-left: -24px;
   }
 }
+
+/************
+ * La liste *
+ ************/
+
+#liste > li {
+  list-style-type: none;
+}
+
+#liste > li > div {
+  border: 1px solid grey;
+  max-width: var(--largeur-max-contenu);
+  padding: 32px;
+  border: 1px solid #D7D7D7;
+  -webkit-box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.07);
+          box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.07);
+  border-radius: 16px;
+}
+
+#liste > li > div > span {
+  display: block;
+  text-align: center;
+  font-size: 36px;
+}
+
+.presentation-chaine {
+  margin-top: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-height: var(--taille-logo-chaine);
+}
+
+.presentation-chaine img {
+  width: var(--taille-logo-chaine);
+  height: var(--taille-logo-chaine);
+  border-radius: 50%;
+  margin-right: 16px;
+  -webkit-box-shadow: var(--ombre-logo-chaine);
+          box-shadow: var(--ombre-logo-chaine);
+}
+
+.presentation-chaine p {
+  margin-top: 16px;
+}
+
+.statistiques-chaine {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 16px 0;
+  list-style-type: none;
+  margin: 0 16px;
+  min-height: var(--taille-logo-chaine);
+  min-width: 250px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.statistiques-chaine li {
+  color: var(--couleur-texte-secondaire);
+}
+
+.statistiques-chaine li i {
+  position: relative;
+  top: -2px; /* Juste pour corriger un léger décalage de design */
+  color: rgb(45, 45, 45);
+  margin-right: 8px;
+  font-size: 32px;
+  vertical-align: middle;
+}
+
+.statistiques-chaine .nombre {
+  color: var(--couleur-texte-primaire);
+}
+
