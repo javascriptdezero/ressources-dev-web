@@ -362,13 +362,18 @@ dans le CSS via le pseudo élément ::before.
  * La liste *
  ************/
 
+#liste {
+  margin: 48px auto;
+  max-width: var(--largeur-max-contenu);
+  padding-left: 0;
+}
+
 #liste > li {
   list-style-type: none;
 }
 
 #liste > li > div {
   border: 1px solid grey;
-  max-width: var(--largeur-max-contenu);
   padding: 32px;
   border: 1px solid #D7D7D7;
   -webkit-box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.07);
