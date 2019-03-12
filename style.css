@@ -370,6 +370,7 @@ dans le CSS via le pseudo élément ::before.
 
 #liste > li {
   list-style-type: none;
+  margin: 48px auto;
 }
 
 #liste > li > div {
@@ -468,4 +469,44 @@ dans le CSS via le pseudo élément ::before.
   border: 1px solid;
   padding: 8px;
   border-radius: 6px;
+}
+
+/* Bouton pour accéder à la page YouTube de la chaîne */
+#liste > li > div > .bouton {
+  margin-top: 32px;
+  color: var(--couleur-texte-primaire);
+  text-align: center;
+}
+
+#liste > li > div > .bouton > a {
+  position: relative;
+  text-decoration: none;
+}
+
+#liste > li > div > .bouton > a::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 4px;
+  bottom: -2px;
+  right: 0;
+  background: rgba(255,0,0,.1);
+  -webkit-transition: width .3s;
+  -webkit-transition: width background-color .3s;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+#liste > li > div > .bouton > a:hover::after {
+  width: 74%;
+  background: red;
+}
+
+#liste > li > div > .bouton > a > i {
+  position: relative;
+  top: -2px;
+  color: red;
+  vertical-align: middle;
+  font-size: 48px;
+  margin-right: 8px;
 }
