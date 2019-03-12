@@ -1,4 +1,5 @@
 TODO LIST
 
-- Gérer les visiteurs qui n'ont pas JavaScript d'activé dans leur navigateur
+- Ajouter le lien vers le dépôt GitHub dans le bloc d'info "un code à vocation pédagogique"
 - Récupérer dynamiquement les vignettes (icônes) des chaînes YouTube
+- Gérer les visiteurs qui n'ont pas JavaScript d'activé dans leur navigateur
