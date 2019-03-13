@@ -1,9 +1,33 @@
 /*
 Il n'existe pas "une seule" manière de faire un programme. Je vous présente ma façon
 de générer le HTML mais il peut en exister beaucoup d'autres !
-
-
 */
+
+// La liste est affichée de façon aléatoire à chaque chargement pour permettre aux chaînes
+// peu connues de se faire connaître. Voici la fonction qui mélange le tableau des chaînes.
+// Voir https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+function melanger(tableau) {
+  var nombreElementsDansTableau = tableau.length, positionAleatoire;
+
+  // Tant qu'il y a des éléments à mélanger...
+  while(nombreElementsDansTableau) {
+
+    // Choisi un élément au hasard
+    positionAleatoire = Math.floor(Math.random() * nombreElementsDansTableau--);
+
+    // Echange-le avec l'élément courant
+    // Code d'origine (utilise une variable temporaire t):
+    // t = tableau[m];
+    // tableau[m] = tableau[i];
+    // tableau[i] = t;
+    
+    // Mais ce n'est plus utile grâce au destructuring dans ES6 :) !
+    // Voir https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/Affecter_par_d%C3%A9composition#%C3%89change_de_variables
+    [tableau[nombreElementsDansTableau], tableau[positionAleatoire]] = [tableau[positionAleatoire], tableau[nombreElementsDansTableau]];
+  }
+
+  return tableau;
+}
 
 // On récupère le contenu du fichier donnees.json qui contient toutes les infos des chaînes qu'on veut afficher
 const fichierDonneesChaines = 'donnees.json';
@@ -14,8 +38,10 @@ request.responseType = 'json';
 request.send();
 
 request.onload = function() {
-  const donneesChaines = request.response;
+  // On mélange les chaînes pour ne favoriser personne
+  const donneesChaines = melanger(request.response);
   const liste = document.getElementById('liste');
+
   donneesChaines.forEach((chaine) => {
     const li = document.createElement('li');
     const div = document.createElement('div');
@@ -79,7 +105,6 @@ request.onload = function() {
     // Description de la chaîne
     const descriptionChaine = document.createElement('p');
     descriptionChaine.innerHTML = chaine.description.replace(/\n/g, '<br/>');
-    console.log(chaine.description);
 
     // On ajoute le titre tags
     const titreTags = document.createElement('span');
