@@ -405,6 +405,7 @@ dans le CSS via le pseudo élément ::before.
 
 .presentation-chaine p {
   margin-top: 16px;
+  overflow-x: auto;
 }
 
 .statistiques-chaine {
