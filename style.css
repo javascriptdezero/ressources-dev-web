@@ -465,6 +465,7 @@ dans le CSS via le pseudo élément ::before.
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-right: 16px;
+  margin-bottom: 16px;
   border: 1px solid;
   padding: 8px;
   border-radius: 6px;
