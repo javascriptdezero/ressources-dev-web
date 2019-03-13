@@ -394,7 +394,6 @@ dans le CSS via le pseudo élément ::before.
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  overflow: scroll;
 }
 
 .presentation-chaine img {
