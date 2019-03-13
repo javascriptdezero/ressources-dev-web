@@ -113,6 +113,9 @@ request.onload = function() {
 
     // Liste des tags
     const listeTags = document.createElement('ul');
+    if (chaine.tags.length === 1 && chaine.tags[0].length === 0) {
+      chaine.tags = ["Non renseigné"];
+    }
     chaine.tags.forEach(tag => {
       const li = document.createElement('li');
       li.classList.add('tag');
