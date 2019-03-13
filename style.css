@@ -38,6 +38,7 @@ Merci et bonne lecture :).
   --couleur-bleu2-entete: #58b9ff;
   --couleur-texte-primaire: #4e616c;
   --couleur-texte-secondaire: #a5a5a5;
+  --couleur-gris-tres-clair: #dfdfdf;
 
   /* Vignettes pour l'entête */
   --vignettes-nombre-par-ligne: 4;
@@ -364,8 +365,8 @@ dans le CSS via le pseudo élément ::before.
 
 #liste {
   margin: 48px auto;
-  max-width: var(--largeur-max-contenu);
-  padding-left: 0;
+  max-width: calc(var(--largeur-max-contenu) + 2 * 32px);
+  padding: 0 32px;
 }
 
 #liste > li {
@@ -399,8 +400,9 @@ dans le CSS via le pseudo élément ::before.
   height: var(--taille-logo-chaine);
   border-radius: 50%;
   margin-right: 16px;
+  margin-bottom: 32px;
   -webkit-box-shadow: var(--ombre-logo-chaine);
-          box-shadow: var(--ombre-logo-chaine);
+  box-shadow: var(--ombre-logo-chaine);
 }
 
 .presentation-chaine p {
@@ -418,7 +420,7 @@ dans le CSS via le pseudo élément ::before.
   flex-direction: column;
   padding: 16px 0;
   list-style-type: none;
-  margin: 0 16px;
+  margin: 0 16px 32px 16px;
   max-height: var(--taille-logo-chaine);
   min-width: 250px;
   -webkit-box-pack: justify;
@@ -508,4 +510,41 @@ dans le CSS via le pseudo élément ::before.
   vertical-align: middle;
   font-size: 48px;
   margin-right: 8px;
+}
+
+/*********************************
+ * Responsive design de la liste *
+ *********************************/
+
+@media (max-width: 950px) {
+  .presentation-chaine {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  #liste span.mini-titre, #liste > li > div > ul {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 575px) {
+  #liste {
+    padding: 0;
+  }
+
+  #liste > li {
+    margin: 0;
+    border-bottom: 2px solid var(--couleur-gris-tres-clair);
+  }
+
+  #liste > li > div {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 0;
+  }
 }
