@@ -10,9 +10,9 @@ Il est pédagogique car j'ai pris le temps de le faire bien et de commenter un m
 
 Le but est d'apprendre les bases de la programmation web.
 
-Vous ne trouverez donc pas de frameworks ni d'outil spécifique pour réaliser ce site, juste du pur HTML5/CSS3/JavaScript (ES6).
+Vous ne trouverez donc pas de frameworks ni d'outil spécifique (préprocesseurs CSS par exemple) pour réaliser ce site, juste du pur HTML5/CSS3/JavaScript (ES6) codé à la main.
 
-C'est un choix délibéré de ma part pour montrer qu'on n'a pas besoin de tous ces frameworks pour débuter et créer des projets utiles et intéressants.
+C'est un choix délibéré de ma part pour montrer qu'on n'a pas besoin de tous ces frameworks / outils pour débuter et créer des projets utiles et intéressants.
 
 ## 🇫🇷 Code source et commentaires en Français
 
