@@ -68,10 +68,44 @@ Plus d'infos sur : http://fr.learnlayout.com/box-sizing.html
   box-sizing: border-box;
 }
 
+/*
+C'est une bonne pratique d'utiliser les unités em/rem dans son CSS plutôt que des pixels.
+
+En effet, lorsque vous utilisez des pixels, vous *forcez* la taille de la police à cette valeur et
+uniquement cette valeur. Si l'utilisateur a modifié la taille de la police par défaut de son navigateur
+pour des raisons d'accessibilité (handicaps visuels) ou par confort, eh bien vous écrasez ses préférences.
+
+Ce n'est pas très sympa ! Les unités em/rem en revanche travaillent de façon relative.
+
+Lorsque vous écrivez font-size: 1.4em vous demandez à ce que la taille de la police soit 1.4x
+supérieure à la taille actuelle de la police de l'élement.
+
+Lorsque vous écrivez font-size: 1.4rem vous demandez à ce que la taille de la police soit 1.4x
+supérieure à la taille de l'élément racine (root) qui est en général l'élément html du document.
+
+Les navigateurs utilisent par défaut une taille de police de caractères de 16px (configurable dans les
+options du navigateur, j'ai mis la mienne à 18px par confort).
+
+Si vous voulez mettre 24px par exemple en utilisant des rem, vous devez calculer 24/16 = 1.5rem.
+Ces calculs peuvent être pénibles à effectuer... d'où une petite astuce !
+
+ASTUCE : En utilisant font-size: 62.5% sur l'élément html (root), on obtient une taille de police de base
+de 10px pour tout le document. Ainsi, on peut spécifier nos tailles avec les unités em ou rem très facilement
+puisqu'il suffira alors de diviser par 10 notre valeur en px pour avoir l'équivalent en em/rem !
+
+Ainsi pour 24px on mettre directement 2.4rem (ou em) ! Adieu les divisions pénibles :).
+
+Merci à Mathieu Coingt qui m'a fait découvrir cette astuce (vous pouvez voir son travail sur www.nobsod.fr).
+*/
+
+html {
+  font-size: 62.5%;
+}
+
 body {
   font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen, Ubuntu, Cantarell, "Open Sans",
     "Helvetica Neue", sans-serif;
-  font-size: 24px;
+  font-size: 2.4rem;
   color: var(--couleur-texte-primaire);
 }
 
@@ -92,7 +126,7 @@ header h1 {
   text-align: center;
   font-weight: normal;
   color: white;
-  font-size: 2rem;
+  font-size: 3.6rem;
   line-height: 1.4em;
 }
 
@@ -114,7 +148,7 @@ Voir : https://css-tricks.com/centering-css-complete-guide/
 */
 header p {
   color: white;
-  font-size: 2rem;
+  font-size: 3.2rem;
   line-height: 1.4em;
   padding-right: 64px;
   -webkit-box-flex: 1;
@@ -180,7 +214,7 @@ header p {
   header p {
     text-align: center;
     padding-right: 0;
-    font-size: 1.6rem;
+    font-size: 2.8rem;
   }
 }
 
@@ -211,7 +245,7 @@ header p {
 
 .mini-titre {
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1.6rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--couleur-texte-secondaire);
@@ -230,7 +264,7 @@ header p {
 }
 
 #mini-texte {
-  font-size: 16px;
+  font-size: 1.6rem;
   color: var(--couleur-texte-secondaire);
 }
 
@@ -385,7 +419,7 @@ dans le CSS via le pseudo élément ::before.
 #liste .nom-chaine {
   display: block;
   text-align: center;
-  font-size: 36px;
+  font-size: 3.6rem;
 }
 
 .presentation-chaine {
@@ -437,7 +471,7 @@ dans le CSS via le pseudo élément ::before.
   top: -2px; /* Juste pour corriger un léger décalage de design */
   color: rgb(45, 45, 45);
   margin-right: 8px;
-  font-size: 32px;
+  font-size: 3.2rem;
   vertical-align: middle;
 }
 
@@ -462,7 +496,7 @@ dans le CSS via le pseudo élément ::before.
   color: #6FCF97;
   font-weight: bold;
   line-height: normal;
-  font-size: 18px;
+  font-size: 1.8rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-right: 16px;
@@ -508,7 +542,7 @@ dans le CSS via le pseudo élément ::before.
   top: -2px;
   color: red;
   vertical-align: middle;
-  font-size: 48px;
+  font-size: 4.8rem;
   margin-right: 8px;
 }
 
