@@ -30,7 +30,7 @@ function melanger(tableau) {
 }
 
 // On récupère le contenu du fichier donnees.json qui contient toutes les infos des chaînes qu'on veut afficher
-const fichierDonneesChaines = 'donnees.json';
+const fichierDonneesChaines = './json/donnees.json';
 
 const request = new XMLHttpRequest();
 request.open('GET', fichierDonneesChaines);

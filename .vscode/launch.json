@@ -8,7 +8,7 @@
       "type": "node",
       "request": "launch",
       "name": "Générer les données",
-      "program": "${workspaceFolder}/generer-donnees-enrichies.js"
+      "program": "${workspaceFolder}/js/generer-donnees-enrichies.js"
     }
   ]
 }

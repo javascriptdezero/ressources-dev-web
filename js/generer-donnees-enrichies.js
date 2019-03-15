@@ -1,8 +1,8 @@
 const fs = require('fs');
 const youtube = require('./youtube-api');
 
-const listeChainesJson = 'devweb.json';
-const listeChainesEnrichiesJson = 'donnees.json';
+const listeChainesJson = './json/devweb.json';
+const listeChainesEnrichiesJson = './json/donnees.json';
 
 function ajouterEspacesDansNombre(number) {
   return number.replace(/(\d)(?=(\d{3})+$)/g, '$1 ');
