@@ -32,6 +32,18 @@ Je n'ai pas essayé d'effacer mes erreurs, car il est important de comprendre qu
 
 N'hésitez donc pas à naviguer dans l'historique du dépôt GitHub pour voir mes différents commits.
 
+## Clé secrète pour l'API YouTube
+
+Si vous téléchargez le site chez vous, et que vous souhaitez générer le fichier `donnees.json` vous rencontrerez cette erreur :
+
+```
+Error loading client secret file: Error: ENOENT: no such file or directory, open 'client_secret.json'
+```
+
+C'est parfaitement normal.
+
+Je n'ai pas mis ma clé secrète d'accès à l'API YouTube dans le dépôt pour des raisons évidentes. Par conséquent, vous devrez [créer votre propre clé JSON](https://developers.google.com/youtube/v3/quickstart/nodejs#step_1_turn_on_the_api_name) et la mettre à la racine du dépôt dans un fichier nommé `client_secret.json` pour pouvoir appeler l'API YouTube.
+
 ## N'hésitez pas à participer et à partager !
 
 Si vous trouvez un bogue, une faute de frappe ou que vous aimeriez bien plus d'explications sur un bout de code, contactez-moi via Twitter [@JeremyMouzin](https://www.jeremymouzin.com) ou par email sur jeremy@javascriptdezero.com.
