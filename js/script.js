@@ -1,13 +1,18 @@
 /*
-Il n'existe pas "une seule" manière de faire un programme. Je vous présente ma façon
-de générer le HTML mais il peut en exister beaucoup d'autres !
+Auteur : Jérémy Mouzin (www.javascriptdezero.com)
+Twitter : https://twitter.com/jeremymouzin
+
+Il n'existe pas "une seule" manière de faire un programme. Je vous présente ma façon de générer le HTML mais il peut en exister beaucoup d'autres !
+
+Ce script est appelé depuis la page web du site via la balise classique <script src="script.js">. Il va lire le fichier donnees.json et générer du contenu HTML qui sera ajouté dynamiquement au moment du chargement de la page.
 */
 
-// La liste est affichée de façon aléatoire à chaque chargement pour permettre aux chaînes
-// peu connues de se faire connaître. Voici la fonction qui mélange le tableau des chaînes.
-// Voir https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+/*
+La liste est affichée de façon aléatoire à chaque chargement pour permettre aux chaînes peu connues de se faire connaître. Voici la fonction qui mélange le tableau des chaînes.
+Voir https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+*/
 function melanger(tableau) {
-  var nombreElementsDansTableau = tableau.length, positionAleatoire;
+  let nombreElementsDansTableau = tableau.length, positionAleatoire;
 
   // Tant qu'il y a des éléments à mélanger...
   while(nombreElementsDansTableau) {
@@ -15,28 +20,31 @@ function melanger(tableau) {
     // Choisi un élément au hasard
     positionAleatoire = Math.floor(Math.random() * nombreElementsDansTableau--);
 
-    // Echange-le avec l'élément courant
-    // Code d'origine (utilise une variable temporaire t):
-    // t = tableau[m];
-    // tableau[m] = tableau[i];
-    // tableau[i] = t;
-    
-    // Mais ce n'est plus utile grâce au destructuring dans ES6 :) !
-    // Voir https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/Affecter_par_d%C3%A9composition#%C3%89change_de_variables
+    /*
+    Petite parenthèse sur le code d'origine, il utilisait une variable temporaire t comme ça :
+    t = tableau[m];
+    tableau[m] = tableau[i];
+    tableau[i] = t;
+
+    Je l'ai modifié car ce n'est plus utile d'utiliser une variable temporaire grâce au destructuring dans ES6 :) !
+    Voir https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/Affecter_par_d%C3%A9composition#%C3%89change_de_variables
+    */
+
+    // On échange l'élément aléatoire avec l'élément courant
     [tableau[nombreElementsDansTableau], tableau[positionAleatoire]] = [tableau[positionAleatoire], tableau[nombreElementsDansTableau]];
   }
 
   return tableau;
 }
 
-// On récupère le contenu du fichier donnees.json qui contient toutes les infos des chaînes qu'on veut afficher
+// On récupère le contenu du fichier donnees.json via une requête GET (Ajax) qui contient toutes les infos des chaînes qu'on veut afficher
 const fichierDonneesChaines = './json/donnees.json';
-
 const request = new XMLHttpRequest();
 request.open('GET', fichierDonneesChaines);
 request.responseType = 'json';
 request.send();
 
+// Lorsque la requête GET est résolue, on exécute le code ci-dessous
 request.onload = function() {
   // On mélange les chaînes pour ne favoriser personne
   const donneesChaines = melanger(request.response);
@@ -104,6 +112,7 @@ request.onload = function() {
     
     // Description de la chaîne
     const descriptionChaine = document.createElement('p');
+    // Il faut remplacer les retours à la ligne (\n) avec la balise <br/> pour ne pas tout avoir sur une seule ligne
     descriptionChaine.innerHTML = chaine.description.replace(/\n/g, '<br/>');
 
     // On ajoute le titre tags
@@ -113,6 +122,7 @@ request.onload = function() {
 
     // Liste des tags
     const listeTags = document.createElement('ul');
+    // Si auncun tag n'est indiqué, on affiche simplement "Non renseigné"
     if (chaine.tags.length === 1 && chaine.tags[0].length === 0) {
       chaine.tags = ["Non renseigné"];
     }
