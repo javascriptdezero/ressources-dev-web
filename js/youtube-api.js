@@ -1,3 +1,16 @@
+/*
+Auteur : Jérémy Mouzin (www.javascriptdezero.com)
+Twitter : https://twitter.com/jeremymouzin
+
+Ce script est à 90% composé du code de base de la documentation "démarrage rapide" de l'API YouTube pour NodeJS.
+Voir https://developers.google.com/youtube/v3/quickstart/nodejs.
+
+J'ai simplement placé ce script dans son propre fichier pour séparer son contenu du script de génération des données.
+J'appelle son contenu via les modules NodeJS (utilisation de la variable exports).
+
+J'ai traduit en Français les commentaires déjà présents dans la documentation.
+*/
+
 const fs = require('fs');
 const readline = require('readline');
 const { google } = require('googleapis');
@@ -6,30 +19,28 @@ const OAuth2 = google.auth.OAuth2;
 
 exports.service = google.youtube('v3');
 
-// If modifying these scopes, delete your previously saved credentials
-// at ~/.credentials/youtube-nodejs-quickstart.json
+// Si vous modifiez ces valeurs, supprimez vos certificats d'identification sauvegardés précédemment dans ~/.credentials/youtube-nodejs-quickstart.json
 const SCOPES = ['https://www.googleapis.com/auth/youtube.readonly'];
 const TOKEN_DIR = `${process.env.HOME || process.env.HOMEPATH || process.env.USERPROFILE}/.credentials/`;
 const TOKEN_PATH = `${TOKEN_DIR}youtube-nodejs-quickstart.json`;
 
 exports.lancerAuthentification = function lancerAuthentification(callback) {
-  // Load client secrets from a local file.
+  // Charge la clé secrète depuis un fichier local
   fs.readFile('client_secret.json', (err, content) => {
     if (err) {
-      console.log(`Error loading client secret file: ${err}`);
+      console.log(`Erreur pendant le chargement du fichier client secret : ${err}`);
       return;
     }
-    // Authorize a client with the loaded credentials, then call the YouTube API.
+    // Autorise un client avec les certificats d'authentification chargés d'appeler l'API YouTube
     authorize(JSON.parse(content), callback);
   });
 };
 
 /**
- * Create an OAuth2 client with the given credentials, and then execute the
- * given callback function.
+ * Crée un client OAuth2 avec les certificats d'authentification donnés, puis exécute la fonction callback
  *
- * @param {Object} credentials The authorization client credentials.
- * @param {function} callback The callback to call with the authorized client.
+ * @param {Object} credentials Les certificats d'authentification du client
+ * @param {function} callback Le callback à appeler avec le client autorisé
  */
 function authorize(credentials, callback) {
   const clientSecret = credentials.installed.client_secret;
@@ -37,7 +48,7 @@ function authorize(credentials, callback) {
   const redirectUrl = credentials.installed.redirect_uris[0];
   const oauth2Client = new OAuth2(clientId, clientSecret, redirectUrl);
 
-  // Check if we have previously stored a token.
+  // Vérifie si un jeton d'accès (token) avait déjà été stocké précédemment, si oui on l'utilise pour s'authentifier, sinon on en crée un nouveau
   fs.readFile(TOKEN_PATH, (err, token) => {
     if (err) {
       getNewToken(oauth2Client, callback);
@@ -49,28 +60,27 @@ function authorize(credentials, callback) {
 }
 
 /**
- * Get and store new token after prompting for user authorization, and then
- * execute the given callback with the authorized OAuth2 client.
+ * Récupère et stocke un nouveau jeton après avoir demandé l'autorisation utilisateur, puis exécute le callback indiqué 
+ * avec le client OAuth2 authentifié
  *
- * @param {google.auth.OAuth2} oauth2Client The OAuth2 client to get token for.
- * @param {getEventsCallback} callback The callback to call with the authorized
- *     client.
+ * @param {google.auth.OAuth2} oauth2Client Le client OAuth2 pour lequel on récupère un jeton
+ * @param {getEventsCallback} callback Le callback à appeler avec le client authentifié
  */
 function getNewToken(oauth2Client, callback) {
   const authUrl = oauth2Client.generateAuthUrl({
     access_type: 'offline',
     scope: SCOPES,
   });
-  console.log('Authorize this app by visiting this url: ', authUrl);
+  console.log('Autorisez cette application en visitant cet URL :', authUrl);
   const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
   });
-  rl.question('Enter the code from that page here: ', (code) => {
+  rl.question('Entrez le code de cette page ici : ', (code) => {
     rl.close();
     oauth2Client.getToken(code, (err, token) => {
       if (err) {
-        console.log('Error while trying to retrieve access token', err);
+        console.log("Erreur pendant la tentative de récupération du jeton d'accès", err);
         return;
       }
       oauth2Client.credentials = token;
@@ -81,9 +91,9 @@ function getNewToken(oauth2Client, callback) {
 }
 
 /**
- * Store token to disk be used in later program executions.
+ * Stocke le jeton sur le disque pour les prochaines exécutions
  *
- * @param {Object} token The token to store to disk.
+ * @param {Object} token Le jeton à stocker sur le disque
  */
 function storeToken(token) {
   try {
@@ -95,7 +105,7 @@ function storeToken(token) {
   }
   fs.writeFile(TOKEN_PATH, JSON.stringify(token), (err) => {
     if (err) throw err;
-    console.log(`Token stored to ${TOKEN_PATH}`);
+    console.log(`Jeton stocké dans ${TOKEN_PATH}`);
   });
-  console.log(`Token stored to ${TOKEN_PATH}`);
+  console.log(`Jeton stocké dans ${TOKEN_PATH}`);
 }
