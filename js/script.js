@@ -12,26 +12,30 @@ La liste est affichée de façon aléatoire à chaque chargement pour permettre 
 Voir https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 */
 function melanger(tableau) {
-  let nombreElementsDansTableau = tableau.length, positionAleatoire;
+  let nombreElementsRestantsAMelanger = tableau.length;
+  let positionAleatoire;
 
   // Tant qu'il y a des éléments à mélanger...
-  while(nombreElementsDansTableau) {
+  while(nombreElementsRestantsAMelanger) {
 
     // Choisi un élément au hasard
-    positionAleatoire = Math.floor(Math.random() * nombreElementsDansTableau--);
+    positionAleatoire = Math.floor(Math.random() * nombreElementsRestantsAMelanger);
+    nombreElementsRestantsAMelanger = nombreElementsRestantsAMelanger - 1;
 
     /*
-    Petite parenthèse sur le code d'origine, il utilisait une variable temporaire t comme ça :
+    Laissez-moi faire une petite parenthèse :).
+    
+    Sur le code d'origine (ci-après) pour échanger les valeurs de deux éléments du tableau, l'auteur utilisait une variable temporaire t comme ceci :
     t = tableau[m];
     tableau[m] = tableau[i];
     tableau[i] = t;
 
     Je l'ai modifié car ce n'est plus utile d'utiliser une variable temporaire grâce au destructuring dans ES6 :) !
     Voir https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/Affecter_par_d%C3%A9composition#%C3%89change_de_variables
+    
+    On échange l'élément aléatoire avec l'élément courant :
     */
-
-    // On échange l'élément aléatoire avec l'élément courant
-    [tableau[nombreElementsDansTableau], tableau[positionAleatoire]] = [tableau[positionAleatoire], tableau[nombreElementsDansTableau]];
+    [tableau[nombreElementsRestantsAMelanger], tableau[positionAleatoire]] = [tableau[positionAleatoire], tableau[nombreElementsRestantsAMelanger]];
   }
 
   return tableau;
