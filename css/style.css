@@ -112,6 +112,20 @@ body {
   color: var(--couleur-texte-primaire);
 }
 
+/*****************************************************
+ * Responsive design pour le texte sur petits écrans *
+ *****************************************************/
+
+ /*
+ On réduit la taille de la police de caractères sur les petits écrans pour éviter d'avoir de grosses lettres immondes sur les téléphones mobiles et tablettes !
+ Vu qu'on travaille avec l'unité rem principalement, il suffit de modifier la valeur de notre root element qui n'est autre que l'élément html pour réduire immédiatement toutes les tailles de police en une seule ligne !
+ */
+@media (max-width: 950px) {
+  html {
+    font-size: 50%;
+  }
+}
+
 /**********
  * Entête *
  **********/
