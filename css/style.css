@@ -602,14 +602,14 @@ dans le CSS via le pseudo élément ::before.
  * Le pied de page (footer) *
  ****************************/
 
- footer {
-   color: var(--couleur-texte-sur-gris-fonce);
-   background: var(--couleur-gris-fonce);
-   padding: 48px 0;
- }
+footer {
+  color: var(--couleur-texte-sur-gris-fonce);
+  background: var(--couleur-gris-fonce);
+  padding: 48px 0;
+}
 
- footer p {
-   text-align: center;
-   margin: 0 auto;
-   padding: 16px 32px;
- }
+footer p {
+  text-align: center;
+  margin: 0 auto;
+  padding: 16px 32px;
+}
