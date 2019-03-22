@@ -34,7 +34,6 @@
       "sublime",
       "vscode",
       "algorithmie",
-      "design web",
       "conseils pour débutants",
       "astuces"
     ]
@@ -149,34 +148,46 @@
   },
   {
     "url": "https://www.youtube.com/channel/UCsFoQ4A9CZbF3qag317uZZQ",
-    "tags": [""]
+    "tags": ["html", "css", "javascript", "php", "mysql", "jquery", "wordpress"]
   },
   {
     "url": "https://www.youtube.com/channel/UCUSRY5EcZAhSbz1Q1QuQw0w",
-    "tags": [""]
+    "tags": ["html", "css", "php", "interviews", "vlog", "javascript"]
   },
   {
     "url": "https://www.youtube.com/channel/UCIHVyohXw6j2T-83-uLngEg",
-    "tags": [""]
+    "tags": ["html", "css", "php", "interviews", "gaming"]
   },
   {
     "url": "https://www.youtube.com/channel/UCFfJNxWTuD8UCnG5JNSiqkw",
-    "tags": [""]
+    "tags": ["html", "css", "gaming"]
   },
   {
     "url": "https://www.youtube.com/channel/UCJFSN6epvy4HGjujPhuhGvg",
-    "tags": [""]
+    "tags": ["html", "css", "javascript", "symfony", "php"]
   },
   {
     "url": "https://www.youtube.com/channel/UCXYs_tVa-VFm5f6bWrPybhA",
-    "tags": [""]
+    "tags": ["conseils & astuces", "interviews"]
   },
   {
     "url": "https://www.youtube.com/channel/UC9zdcXq2z3GY3UVhlADNijg",
-    "tags": [""]
+    "tags": [
+      "html",
+      "css",
+      "javascript",
+      "sass",
+      "gulp",
+      "jquery",
+      "react native",
+      "git",
+      "ruby",
+      "ruby on rails",
+      "bulma"
+    ]
   },
   {
     "url": "https://www.youtube.com/channel/UC18RbwcHN3cP8Q-K53PF-JQ",
-    "tags": [""]
+    "tags": ["html", "css", "javascript", "vscode", "nodejs", "mongodb"]
   }
 ]
