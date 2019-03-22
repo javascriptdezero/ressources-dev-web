@@ -1,104 +1,151 @@
 [
   {
     "url": "https://www.youtube.com/channel/UCMzJVrWeaKUotLPWTdx6HuQ",
-    "tags": ["JavaScript"]
+    "tags": [
+      "javascript",
+      "formation",
+      "reconversion professionnelle",
+      "bonnes pratiques",
+      "astuces",
+      "vscode",
+      "algorithmie",
+      "battledev"
+    ]
   },
   {
     "url": "https://www.youtube.com/channel/UCS71mal_TkTW_PpZR9YLpIA",
-    "tags": ["Symfony", "PHP", "HTML", "CSS", "JavaScript", "algorithmie (freeCodeCamp)"]
+    "tags": ["symfony", "php", "html", "css", "javascript", "react", "twig", "algorithmie"]
   },
   {
     "url": "https://www.youtube.com/channel/UChhPkjgG1-iLUOmURGdgQrw",
     "tags": [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "React",
-      "Firebase",
-      "PWA",
-      "Sass",
-      "Markdown",
-      "Phaser.js",
-      "jQuery",
+      "html",
+      "css",
+      "javascript",
+      "react",
+      "firebase",
+      "pwa",
+      "sass",
+      "markdown",
+      "phaser.js",
+      "jquery",
+      "gatsby",
+      "emmet",
+      "sublime",
+      "vscode",
+      "algorithmie",
       "design web",
-      "conseils généraux pour débutants",
-      "astuces de productivité",
-      "outils de développement"
+      "conseils pour débutants",
+      "astuces"
     ]
   },
   {
     "url": "https://www.youtube.com/channel/UCj_iGliGCkLcHSZ8eqVNPDQ",
     "tags": [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "PHP",
-      "CakePHP",
-      "NodeJS",
-      "VueJS",
-      "Symfony",
-      "React",
-      "Wordpress",
-      "Bootstrap",
+      "html",
+      "css",
+      "javascript",
+      "php",
+      "cakephp",
+      "nodejs",
+      "vuejs",
+      "symfony",
+      "react",
+      "wordpress",
+      "bootstrap",
       "application mobile",
-      "Git",
-      "Less",
-      "Sass",
-      "Compass",
-      "outils de développement",
-      "jQuery",
-      "MySQL",
-      "Markdown",
-      "Algorithmie",
-      "Angular",
-      "SVG",
-      "POO en PHP",
-      "Laravel",
-      "Tests unitaires",
-      "Ruby",
-      "Linux",
-      "Webpack"
+      "git",
+      "less",
+      "sass",
+      "gulp",
+      "compass",
+      "sublime",
+      "phpstorm",
+      "jquery",
+      "mysql",
+      "markdown",
+      "algorithmie",
+      "angular",
+      "svg",
+      "poo en php",
+      "laravel",
+      "tests unitaires",
+      "ruby",
+      "ruby on rails",
+      "linux",
+      "webpack"
     ]
   },
   {
     "url": "https://www.youtube.com/channel/UCeZIdBQiLoH3zi-VCHwi5VQ",
-    "tags": [""]
+    "tags": ["html", "angular", "vscode", "bootstrap", "astuces", "conseils", "interviews"]
   },
   {
     "url": "https://www.youtube.com/channel/UCLOAPb7ATQUs_nDs9ViLcMw",
-    "tags": ["vlog", "conseils de dev", "formation", "humour"]
+    "tags": ["vlog", "conseils", "astuces", "humour", "inspiration", "le wagon", "duel de devs", "interviews"]
   },
   {
     "url": "https://www.youtube.com/channel/UChyW1pwcQT2RA4Q2onfNfpg",
-    "tags": [""]
+    "tags": ["php", "laravel", "vuejs", "laracon"]
   },
   {
     "url": "https://www.youtube.com/channel/UC7BNBNLwMF8GjgXLDP8PWQw",
-    "tags": [""]
+    "tags": ["vlog", "conseils", "astuces", "html", "css", "javascript", "php"]
   },
   {
     "url": "https://www.youtube.com/channel/UCjDg7LaaMzmuhj6I1jTzb1Q",
-    "tags": [""]
+    "tags": ["astuces", "conseils"]
   },
   {
     "url": "https://www.youtube.com/channel/UC0FIKAE7xORm6Y91kWbg4cA",
-    "tags": [""]
+    "tags": [
+      "html",
+      "css",
+      "bootstrap",
+      "jquery",
+      "javascript",
+      "conseils",
+      "astuces",
+      "php",
+      "sql",
+      "wordpress",
+      "interviews",
+      "formation",
+      "dom",
+      "frameworks"
+    ]
   },
   {
     "url": "https://www.youtube.com/channel/UCftI9Qw4HJXKVNzhuqZM_2w",
-    "tags": [""]
+    "tags": ["vlog", "école 42", "javascript", "gaming"]
   },
   {
     "url": "https://www.youtube.com/channel/UCzuaB4F2znrMggxcwUuVhAw",
-    "tags": [""]
-  },
-  {
-    "url": "https://www.youtube.com/channel/UC61GK_nOLSJdzAK5hoR2mJA",
-    "tags": [""]
+    "tags": [
+      "html",
+      "css",
+      "javascript",
+      "php",
+      "cakephp",
+      "jquery",
+      "bootstrap",
+      "conseils",
+      "astuces",
+      "nodejs",
+      "angular",
+      "ruby",
+      "wordpress",
+      "git",
+      "poo en php",
+      "laravel",
+      "react",
+      "react native",
+      "symfony"
+    ]
   },
   {
     "url": "https://www.youtube.com/channel/UCgJERWtcvu-JiPq5wBkYF1g",
-    "tags": [""]
+    "tags": ["javascript", "react", "formation", "nodejs", "graphql"]
   },
   {
     "url": "https://www.youtube.com/channel/UCsFoQ4A9CZbF3qag317uZZQ",
