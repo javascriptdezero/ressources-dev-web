@@ -392,8 +392,6 @@ dans le CSS via le pseudo élément ::before.
   }
 
   #votre-serviteur .contenu img {
-    width: 250px;
-    height: 250px;
     margin: 3.2rem 3.2rem 3.2rem 1.6rem;
   }
 
