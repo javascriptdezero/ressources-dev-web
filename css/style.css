@@ -114,6 +114,15 @@ body {
   color: var(--couleur-texte-primaire);
 }
 
+a {
+  color: var(--couleur-bleu1-entete);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 /*****************************************************
  * Responsive design pour le texte sur petits écrans *
  *****************************************************/
