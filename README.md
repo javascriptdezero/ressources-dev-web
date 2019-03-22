@@ -14,7 +14,7 @@ Vous ne trouverez donc pas de frameworks ni d'outil spécifique (préprocesseurs
 
 C'est un choix délibéré de ma part pour montrer qu'on n'a pas besoin de tous ces frameworks / outils pour débuter et créer des projets utiles et intéressants.
 
-## 🇫🇷 Code source et commentaires en Français
+## 🇫🇷 Code source et commentaires en Français (cocorico 🐓)
 
 Pour éviter de laisser de côté une partie de la population qui ne parle pas Anglais, j'ai fait le choix de rédiger tout ce que j'ai pu en Français.
 
