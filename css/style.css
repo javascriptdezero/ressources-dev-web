@@ -42,6 +42,8 @@ Merci et bonne lecture :).
   --couleur-texte-primaire: #4e616c;
   --couleur-texte-secondaire: #a5a5a5;
   --couleur-gris-tres-clair: #dfdfdf;
+  --couleur-gris-fonce: #525252;
+  --couleur-texte-sur-gris-fonce: #c6c6c6;
 
   /* Vignettes pour l'entête */
   --vignettes-nombre-par-ligne: 4;
@@ -595,3 +597,19 @@ dans le CSS via le pseudo élément ::before.
     border-radius: 0;
   }
 }
+
+/****************************
+ * Le pied de page (footer) *
+ ****************************/
+
+ footer {
+   color: var(--couleur-texte-sur-gris-fonce);
+   background: var(--couleur-gris-fonce);
+   padding: 48px 0;
+ }
+
+ footer p {
+   text-align: center;
+   margin: 0 auto;
+   padding: 16px 32px;
+ }
