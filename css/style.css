@@ -495,13 +495,7 @@ dans le CSS via le pseudo élément ::before.
 }
 
 /* Tags de la chaîne */
-
-#liste span.mini-titre {
-  margin-left: calc(var(--taille-logo-chaine) + 32px);
-}
-
 #liste > li > div > ul {
-  margin-left: calc(var(--taille-logo-chaine) + 24px);
   margin-top: 16px;
   padding-left: 0;
 }
