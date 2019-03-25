@@ -116,6 +116,10 @@ request.onload = function() {
     
     // Description de la chaîne
     const descriptionChaine = document.createElement('p');
+    // Si la description n'est pas renseignée, on l'indique
+    if (chaine.description.length === 0) {
+      chaine.description = "Aucune description disponible.";
+    }
     // Il faut remplacer les retours à la ligne (\n) avec la balise <br/> pour ne pas tout avoir sur une seule ligne
     descriptionChaine.innerHTML = chaine.description.replace(/\n/g, '<br/>');
 
