@@ -4,6 +4,8 @@ Twitter : https://twitter.com/jeremymouzin
 
 Voici le script qui est appelé de façon périodique par un job cron (voir https://fr.wikipedia.org/wiki/Cron) sur le serveur qui héberge le site ledevweb.fr.
 
+J'ai également modifié la façon dont on charge la clé secrète permettant d'accéder à l'API YouTube. En effet il ne faut JAMAIS publier sa clé secrète sur GitHub sinon quelqu'un de malintentionné pourrait l'utiliser ! J'utilise une variable d'environnement pour charger la clé secrète lorsque je suis en production, ainsi personne ne peut la voir.
+
 Ce script lit le fichier devweb.json qui contient les infos des chaînes qu'on souhaite inclure dans la liste.
 Il en extrait l'ID de la chaîne puis fait une requête sur l'API YouTube pour récupérer plus d'infos sur celle-ci comme l'icône de la chaîne, sa description, le nombre de vues, de vidéos, d'abonnés etc.
 
@@ -15,20 +17,48 @@ La doc de référence de l'API YouTube : https://developers.google.com/youtube/v
 */
 
 const fs = require('fs');
-const youtube = require('./youtube-api');
+const { google } = require('googleapis');
+const youtube = google.youtube('v3');
+
+// Authentification
+const FICHIER_CLE_API = 'cle_api.txt';
+const VAR_ENV_CLE_API = "CLE_API";
 
 const listeChainesJson = './json/devweb.json';
 const listeChainesEnrichiesJson = './json/donnees.json';
+
+/*
+Charge la clé secrète depuis un fichier local (quand on développe) ou depuis la
+variable d'environnement lorsqu'on déploie le site en production. Ceci pour éviter de
+publier notre clé secrète sur le dépôt GitHub !
+*/
+// On cherche déjà si le fichier contenant la clé secrète est présent...
+fs.readFile(FICHIER_CLE_API, (err, cleApi) => {
+  if (err) {
+    // Si on ne trouve pas le fichier, on utilise la variable d'environnement
+    if (process.env[VAR_ENV_CLE_API]) {
+      console.log(`Clé d'authentification trouvée dans la variable d'environnement '${VAR_ENV_CLE_API}'.`);
+      cleApi = process.env[VAR_ENV_CLE_API];
+    } else {
+      console.log(`Clé d'authentification introuvable pour se connecter à l'API YouTube. Il n'y a pas de fichier ${FICHIER_CLE_API}) ni de variable d'environnement '${VAR_ENV_CLE_API}'.`);
+      return;
+    }
+  } else {
+    console.log(`Clé d'authentification trouvée depuis le fichier '${FICHIER_CLE_API}'.`)
+    cleApi = cleApi.toString();
+  }
+  demarrer(cleApi);
+});
 
 // On formate les grands nombres par blocs de 3 chiffres donc 13178 devient 13 178 pour une meilleure lisibilité
 function ajouterEspacesDansNombre(number) {
   return number.replace(/(\d)(?=(\d{3})+$)/g, '$1 ');
 }
 
-function demarrer(auth) {
+function demarrer(cleApi) {
   // Charge la liste des chaînes de développeurs web depuis le fichier JSON
   const listeChaines = JSON.parse(fs.readFileSync(listeChainesJson));
-  
+
   // Crée une liste des chaînes qui sera enrichie des données récupérées via l'API YouTube
   const listeChainesEnrichies = {};
   const chainesIds = [];
@@ -51,9 +81,10 @@ function demarrer(auth) {
   Pour ça il suffit par exemple de passer comme argument id: "id1,id2,id3".
   Voir https://developers.google.com/youtube/v3/docs/captions/list
   */
-  youtube.service.channels.list(
+  // youtube.service.channels.list(
+  youtube.channels.list(
     {
-      auth,
+      auth: cleApi,
       part: 'snippet,statistics',
       id: chainesIds.join(','), // On passe la chaîne de caractère "id1,id2,id3" comme argument
     },
@@ -76,14 +107,14 @@ function demarrer(auth) {
       Moi -------requete("id1,id2,id3")-------> Serveurs API YouTube
 
       ETAPE 2: YouTube forge 3 nouvelles requêtes envoyées de façon asynchrone et simultanée
-                                                                     -------requete(id1)-------> Base de données YouTube
+                                                                      -------requete(id1)-------> Base de données YouTube
                                                 Serveurs API YouTube -------requete(id2)-------> Base de données YouTube
-                                                                     -------requete(id3)-------> Base de données YouTube
+                                                                      -------requete(id3)-------> Base de données YouTube
 
       ETAPE 3: Dès qu'une réponse est prête, elle est envoyée => donc l'ordre n'est plus respecté !
                                                 Serveurs API YouTube <-------reponse(id3)------- Base de données YouTube
-                                                                     <-------reponse(id1)------- Base de données YouTube
-                                                                     <-------reponse(id2)------- Base de données YouTube
+                                                                      <-------reponse(id1)------- Base de données YouTube
+                                                                      <-------reponse(id2)------- Base de données YouTube
 
       ETAPE 4: Le serveur nous renvoie un objet JSON *dans l'ordre où il a reçu ses réponses* (donc dans le désordre pour nous !)
       Moi <-------reponse(id3,id1,id2)------- Serveurs API YouTube
@@ -135,6 +166,3 @@ function demarrer(auth) {
     },
   );
 }
-
-// On appellera la fonction demarrer() une fois l'authentification à l'API YouTube effectuée
-youtube.lancerAuthentification(demarrer);
