@@ -8,6 +8,8 @@ Voir https://developers.google.com/youtube/v3/quickstart/nodejs.
 J'ai simplement placé ce script dans son propre fichier pour séparer son contenu du script de génération des données.
 J'appelle son contenu via les modules NodeJS (utilisation de la variable exports).
 
+J'ai également modifié la façon dont on charge la clé secrète permettant d'accéder à l'API YouTube. En effet il ne faut JAMAIS publier sa clé secrète sur GitHub sinon quelqu'un de malintentionné pourrait l'utiliser ! J'utilise une variable d'environnement pour charger la clé secrète lorsque je suis en production, ainsi personne ne peut la voir.
+
 J'ai traduit en Français les commentaires déjà présents dans la documentation.
 */
 
@@ -23,13 +25,28 @@ exports.service = google.youtube('v3');
 const SCOPES = ['https://www.googleapis.com/auth/youtube.readonly'];
 const TOKEN_DIR = `${process.env.HOME || process.env.HOMEPATH || process.env.USERPROFILE}/.credentials/`;
 const TOKEN_PATH = `${TOKEN_DIR}youtube-nodejs-quickstart.json`;
+const FICHIER_CLE_SECRETE_API = 'client_secret.json';
+const VAR_ENV_CLE_SECRETE_API = "CLE_SECRETE_API";
 
 exports.lancerAuthentification = function lancerAuthentification(callback) {
-  // Charge la clé secrète depuis un fichier local
-  fs.readFile('client_secret.json', (err, content) => {
+  /*
+  Charge la clé secrète depuis un fichier local (quand on développe) ou depuis la
+  variable d'environnement lorsqu'on déploie le site en production. Ceci pour éviter de
+  publier notre clé secrète sur le dépôt GitHub !
+  */
+  // On cherche déjà si le fichier contenant la clé secrète est présent...
+  fs.readFile(FICHIER_CLE_SECRETE_API, (err, content) => {
     if (err) {
-      console.log(`Erreur pendant le chargement du fichier client secret : ${err}`);
-      return;
+      // Si on ne trouve pas le fichier, on utilise la variable d'environnement
+      if (process.env[VAR_ENV_CLE_SECRETE_API]) {
+        console.log(`Clé d'authentification trouvée dans la variable d'environnement '${VAR_ENV_CLE_SECRETE_API}'.`);
+        content = process.env[VAR_ENV_CLE_SECRETE_API];
+      } else {
+        console.log(`Clé d'authentification introuvable pour se connecter à l'API YouTube. Il n'y a pas de fichier ${FICHIER_CLE_SECRETE_API}) ni de variable d'environnement '${VAR_ENV_CLE_SECRETE_API}'.`);
+        return;
+      }
+    } else {
+      console.log(`Clé d'authentification trouvée depuis le fichier '${FICHIER_CLE_SECRETE_API}'.`)
     }
     // Autorise un client avec les certificats d'authentification chargés d'appeler l'API YouTube
     authorize(JSON.parse(content), callback);
