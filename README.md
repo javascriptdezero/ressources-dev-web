@@ -24,25 +24,25 @@ Pour éviter de laisser de côté une partie de la population qui ne parle pas A
 
 Vous trouverez également des explications techniques sur les choix que j'ai fait pour réaliser ce site.
 
-Les fichiers HTML, CSS et JavaScript sont tous commentés, pensez à lire leur contenu !
+Les fichiers HTML, CSS et JavaScript sont tous commentés, pensez à lire leur contenu.
 
-Le code source n'est pas minifié/compressé/uglifié, il est lisible, directement sur le site web <i>comme au bon vieux temps<sup>TM</sup> !</i> Je préfère troquer quelques kilo-octets sur le réseau contre un site intégralement ouvert et modifiable par un débutant pour s'en approprier le contenu et le code.
+Le code source n'est pas minifié/compressé/uglifié. Il est lisible, directement sur le site web <i>comme au bon vieux temps<sup>TM</sup></i>. Je préfère troquer quelques kilo-octets sur le réseau contre un site intégralement ouvert et modifiable par un débutant pour s'en approprier le contenu et le code.
 
 > Je vous invite donc vivement à abuser du clic droit -> Afficher le code source (ou Inspecter). Regardez, manipulez, modifiez, bidouillez, c'est comme ça qu'on apprend, alors faites-vous plaisir !
 
 ## Un dépôt GitHub propre et honnête
 
-J'ai essayé de commiter souvent mon code source pour que vous puissiez voir l'évolution du site internet : comment j'ai créé petit à petit les fonctionnalités. 
+J'ai essayé de commiter souvent mon code pour que vous puissiez voir l'évolution du site internet : comment j'ai créé petit à petit les fonctionnalités. 
 
 C'est une bonne pratique de commiter de façon *atomique* chaque changement. Ça permet de faciliter l'isolation des bogues et de bien séparer les modifications les unes des autres pour faire un `git bisect` par exemple et trouver le commit coupable !
 
-Je n'ai pas essayé d'effacer mes erreurs, car il est important de comprendre que même les professionnels font des erreurs. Trop souvent les débutants pensent qu'on développe "en une fois" un morceau de code et du premier coup, ce qui est totalement faux. On procède petit à petit, par itérations successives.
+Je n'ai pas essayé d'effacer mes erreurs, car il est important de comprendre que même les professionnels font des erreurs. Trop souvent les débutants pensent qu'on développe "en une fois" un morceau de code et du premier coup, ce qui est totalement faux. On procède petit à petit, par itérations successives, c'est ce que je veux démontrer ici.
 
 > N'hésitez donc pas à naviguer dans l'historique du dépôt GitHub pour voir mes différents commits.
 
 ## Clé secrète pour l'API YouTube
 
-Si vous téléchargez le site chez vous, et que vous souhaitez générer le fichier `donnees.json` vous rencontrerez cette erreur :
+Si vous téléchargez le site chez vous (explications ci-après), et que vous souhaitez générer le fichier `donnees.json` vous rencontrerez cette erreur :
 
 ```
 Clé d'authentification introuvable pour se connecter à l'API YouTube. Il n'y a pas de fichier cle_api.txt ni de variable d'environnement 'CLE_API'.
@@ -54,13 +54,35 @@ Je n'ai pas mis ma clé secrète d'accès à l'API YouTube dans le dépôt pour 
 
 Par conséquent, vous devrez [créer votre propre clé API](https://developers.google.com/youtube/registering_an_application) et la mettre à la racine du dépôt dans un fichier nommé `cle_api.txt` pour pouvoir appeler l'API YouTube et générer le fichier de données.
 
-## Architecture du projet et choix techniques
+## Architecture et choix techniques
+
+### Arborescence du projet et description des fichiers
 
 Le projet est composé d'un fichier `index.html` qui contient le contenu statique du site internet (tout sauf la liste des développeurs web).
 
-Un script nommé `generer-donnees-enrichies.js` contenu dans le sous-dossier `js` est exécuté par NodeJS au moment de la construction du site (*build*).
+Les autres fichiers sont répartis dans des sous-dossiers (histoire de classer les fichiers communs) : `css`, `images`, `js`, `json` etc.
+
+Le sous-dossier `json` contient le fichier `devweb.json` que je maintiens à la main. J'ajoute une nouvelle entrée avec le lien vers la chaîne YouTube et les tags manuellement à chaque nouvelle découverte.
+
+Un script nommé `generer-donnees-enrichies.js` contenu dans le sous-dossier `js` est exécuté par `NodeJS` au moment de la construction du site (*build*). Ce script fait appel à l'API YouTube et au fichier `devweb.json` pour récupérer la liste des chaînes sur lesquelles se renseigner.
+
+Ce script va créer un fichier `donnees.json` dans le sous-dossier `json` qui contiendra l'intégralité des données de la chaîne (nom, icône, nombre de vidéos, de vues, d'abonnés, description etc.).
+
+Enfin le fichier `script.js` qui est inclu dans le fichier `index.html` vient lire le fichier `donnees.json` et génère le HTML de la liste au moment du chargement du site internet par le navigateur.
 
 Un fichier `TODO` a la racine du projet indique les prochaines fonctionnalités sur lesquelles je dois travailler.
+
+> Consultez les commentaires à l'intérieur de chaque fichier pour avoir plus d'informations sur le fonctionnement interne.
+
+### Pourquoi cette architecture ?
+
+J'aurai pu faire appel à l'API YouTube directement depuis le fichier `script.js` et récupérer les toutes dernières données depuis YouTube à chaque chargement de la page web.
+
+Oui... mais ça prend pas mal de temps. Ce qui fait que le site ne se chargerait pas immédiatement (du moins pour la partie avec la liste).
+
+Par ailleurs, avoir les *toutes* dernières statistiques des chaînes ne me semble pas hyper important. Avec le système en place, à chaque fois que je fais une mise à jour, les données sont mises à jour également.
+
+À terme je vais exécuter le script de construction une fois par jour pour mettre à jour les données des chaînes régulièrement sans que j'ai besoin de mettre à jour le dépôt Git.
 
 ## Comment télécharger et lancer ce site chez vous ?
 
@@ -92,7 +114,7 @@ Terminé.
 9. Vous pouvez lancer le site internet grâce à l'extension Live Server que vous avez dû installer à l'étape 1 en cliquant sur "Go Live" dans la barre bleue en bas de VSCode.
 10. Le site va se charger dans votre navigateur et la liste devrait apparaître.
 
-## Mise en ligne : Netlify
+## Mise en ligne avec Netlify
 
 J'ai utilisé pour la première fois le service [Netlify](www.netlify.com) pour mettre en ligne ce site internet.
 
@@ -104,7 +126,7 @@ Ce service permet de publier automatiquement votre site internet sur le domaine 
 
 La publication s'effectue à chaque fois que vous poussez votre branche sur votre dépôt GitHub qui héberge le code source du site.
 
-C'est très pratique comme fonctionnement et ça évite de passer par un système FTP classique pour envoyer ces données sur le serveur web.
+C'est très pratique comme fonctionnement et ça évite de passer par un système FTP classique pour envoyer ces données vers le serveur web.
 
 ## N'hésitez pas à participer et à partager !
 
@@ -116,6 +138,6 @@ Vous pouvez également lui ajouter une étoile en cliquant sur le bouton "⭑Sta
 
 ## Qui suis-je ?
 
-Je m'appelle Jérémy Mouzin, je suis le créateur de la formation [JavaScript de Zéro](https://www.javascriptdezero.com).
+Je m'appelle Jérémy Mouzin, je suis le créateur de la formation vidéo [JavaScript de Zéro](https://www.javascriptdezero.com).
 
-J'enseigne la programmation aux débutants complets en utilisant comme premier langage le JavaScript.
+J'enseigne la programmation aux débutants complets en utilisant comme premier langage le JavaScript. Le module débutant est gratuit et accessible depuis [ma chaîne YouTube](https://www.youtube.com/channel/UCMzJVrWeaKUotLPWTdx6HuQ/videos).
