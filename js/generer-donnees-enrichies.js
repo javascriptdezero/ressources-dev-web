@@ -2,14 +2,14 @@
 Auteur : Jérémy Mouzin (www.javascriptdezero.com)
 Twitter : https://twitter.com/jeremymouzin
 
-Voici le script qui est appelé de façon périodique par un job cron (voir https://fr.wikipedia.org/wiki/Cron) sur le serveur qui héberge le site ledevweb.fr.
+Voici le script qui sera appelé de façon périodique sur le serveur qui héberge le site ledevweb.fr.
 
-J'ai également modifié la façon dont on charge la clé secrète permettant d'accéder à l'API YouTube. En effet il ne faut JAMAIS publier sa clé secrète sur GitHub sinon quelqu'un de malintentionné pourrait l'utiliser ! J'utilise une variable d'environnement pour charger la clé secrète lorsque je suis en production, ainsi personne ne peut la voir.
+J'ai modifié la façon dont on charge la clé secrète permettant d'accéder à l'API YouTube. En effet il ne faut JAMAIS publier sa clé secrète sur GitHub sinon quelqu'un de malintentionné pourrait l'utiliser ! J'utilise une variable d'environnement pour charger la clé secrète lorsque je suis en production, ainsi personne ne peut la voir.
 
 Ce script lit le fichier devweb.json qui contient les infos des chaînes qu'on souhaite inclure dans la liste.
 Il en extrait l'ID de la chaîne puis fait une requête sur l'API YouTube pour récupérer plus d'infos sur celle-ci comme l'icône de la chaîne, sa description, le nombre de vues, de vidéos, d'abonnés etc.
 
-Ensuite il ajoute ces nouvelles données dans un objet et génère un nouveau fichier donnees.json contenant toutes les informations de toutes les chaînes. C'est ce fichier qui sera exploité par le site web via le fichier script.js.
+Ensuite il ajoute ces nouvelles données dans un objet et génère un nouveau fichier donnees.json contenant toutes les informations de toutes les chaînes. C'est ce fichier qui sera exploité par le fichier script.js contenu dans le index.html.
 
 Quelques documentations de référence utilisées pour rédiger ce script :
 La doc de démarrage rapide de l'API YouTube pour NodeJS : https://developers.google.com/youtube/v3/quickstart/nodejs
