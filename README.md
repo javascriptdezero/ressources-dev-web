@@ -74,7 +74,7 @@ iMac:ressources-dev-web jeremy$ npm install
 added 35 packages from 40 contributors and audited 221 packages in 1.293s
 found 0 vulnerabilities
 ```
-4. Créez la clé API pour accéder à YouTube comme indiqué à [cette section](#Cle-secrete-pour-l-API-YouTube). Une clé API ressemble à ceci : `AIzaSyC_GXKx3W_v1VvhT13BMz-AfquRYZP9ees`
+4. Créez la clé API pour accéder à YouTube comme indiqué à [cette section](#clé-secrète-pour-lapi-youtube). Une clé API ressemble à ceci : `AIzaSyC_GXKx3W_v1VvhT13BMz-AfquRYZP9ees`
 5. Depuis VSCode créez un nouveau fichier `cle_api.txt` à la racine du dossier.
 6. Collez votre clé API dans ce fichier et sauvegardez.
 7. Lancez le script de construction de l'application (*build*) : depuis le terminal, tapez `npm run build` puis validez avec ENTREE. Il devrait afficher quelque chose comme ça :
