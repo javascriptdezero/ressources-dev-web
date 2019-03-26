@@ -1,0 +1,20 @@
+{
+  "name": "ledevweb.fr",
+  "version": "1.0.0",
+  "description": "Toutes les ressources pour apprendre le développement web sur un unique site",
+  "main": "generer-donnees-enrichies.js",
+  "dependencies": {
+    "google-auth-library": "^3.1.0",
+    "googleapis": "^37.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build": "echo 'Création du fichier donnees.json...' && node js/generer-donnees-enrichies.js && echo 'Terminé.'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@javascriptdezero.github.com:javascriptdezero/ressources-dev-web.git"
+  },
+  "author": "Jérémy Mouzin",
+  "license": "ISC"
+}

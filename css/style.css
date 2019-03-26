@@ -1,0 +1,689 @@
+/*
+Auteur : Jérémy Mouzin (www.javascriptdezero.com)
+Twitter : https://twitter.com/jeremymouzin
+
+Il n'existe pas "une seule" manière de faire un site web et son CSS. Je vous présente ma façon
+de créer ce site mais il peut en exister beaucoup d'autres ! Je vous explique les choix
+que j'ai fait dans les commentaires.
+
+Je n'explique en général qu'une seule fois chaque décision pour éviter d'être redondant.
+Par exemple j'explique le choix des unités em, rem ou px la première fois que je les utilise.
+
+J'ai une approche en cycles courts itératifs lorsque je produis du CSS. Qu'est-ce que ça veut dire ?
+
+Eh bien je répète le cycle suivant pour une petite partie du design :
+
+1. Je sélectionne la partie du design à faire, en général je commence par le
+haut du site et je termine par le bas.
+2. J'écris le CSS qui va bien pour coller au design voulu sur cette partie.
+3. Je teste le côté responsive sur cette partie et j'ajuste le CSS si besoin (media-queries).
+4. Je factorise / remanie le nouveau code avec le code déjà présent.
+5. Je reteste le côté responsive pour voir si j'ai rien cassé à l'étape d'avant :).
+6. Je retourne à l'étape 1.
+
+Je préfère m'attaquer à une partie l'une après l'autre pour le côté responsive car le code CSS
+que j'ai utilisé pour faire cette partie du design est frais dans ma mémoire. Si vous faites
+tout le design d'un coup et que vous faites le côté responsive à la fin, il faut vous remémorer
+votre code pour chaque partie, c'est moins efficace selon moi.
+
+Par ailleurs, personne n'est parfait, donc si vous trouvez des bogues, dites-le moi !
+
+Merci et bonne lecture :).
+*/
+
+/*****************
+ * Variables CSS *
+ *****************/
+
+:root {
+  /* Couleurs */
+  --couleur-bleu1-entete: #0094ff;
+  --couleur-bleu2-entete: #58b9ff;
+  --couleur-texte-primaire: #4e616c;
+  --couleur-texte-secondaire: #a5a5a5;
+  --couleur-gris-tres-clair: #dfdfdf;
+  --couleur-gris-fonce: #525252;
+  --couleur-texte-sur-gris-fonce: #c6c6c6;
+
+  /* Vignettes pour l'entête */
+  --vignettes-nombre-par-ligne: 4;
+  --vignettes-taille: 80px;
+  --vignettes-marge: 4px;
+
+  /* Blocs d'info */
+  --infos-padding: 8px;
+  --blocs-info-padding: 16px;
+
+  /* Valeurs générales */
+  --largeur-max-contenu: 1200px;
+  --taille-logo-chaine: 150px;
+  --ombre-logo-chaine: 0px 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/**************************
+ * Déclarations générales *
+ **************************/
+
+/*
+LA propriété CSS pour vous simplifier la vie et éviter de faire des maths ;-).
+Plus d'infos sur : http://fr.learnlayout.com/box-sizing.html
+*/
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*
+C'est une bonne pratique d'utiliser les unités em/rem dans son CSS plutôt que des pixels.
+
+En effet, lorsque vous utilisez des pixels, vous *forcez* la taille de la police à cette valeur et
+uniquement cette valeur. Si l'utilisateur a modifié la taille de la police par défaut de son navigateur
+pour des raisons d'accessibilité (handicaps visuels) ou par confort, eh bien vous écrasez ses préférences.
+
+Ce n'est pas très sympa ! Les unités em/rem en revanche travaillent de façon relative.
+
+Lorsque vous écrivez font-size: 1.4em vous demandez à ce que la taille de la police soit 1.4x
+supérieure à la taille actuelle de la police de l'élement.
+
+Lorsque vous écrivez font-size: 1.4rem vous demandez à ce que la taille de la police soit 1.4x
+supérieure à la taille de l'élément racine (root) qui est en général l'élément html du document.
+
+Les navigateurs utilisent par défaut une taille de police de caractères de 16px (configurable dans les
+options du navigateur, j'ai mis la mienne à 18px par confort).
+
+Si vous voulez mettre 24px par exemple en utilisant des rem, vous devez calculer 24/16 = 1.5rem.
+Ces calculs peuvent être pénibles à effectuer... d'où une petite astuce !
+
+ASTUCE : En utilisant font-size: 62.5% sur l'élément html (root), on obtient une taille de police de base
+de 10px pour tout le document. Ainsi, on peut spécifier nos tailles avec les unités em ou rem très facilement
+puisqu'il suffira alors de diviser par 10 notre valeur en px pour avoir l'équivalent en em/rem !
+
+Ainsi pour 24px on mettre directement 2.4rem (ou em) ! Adieu les divisions pénibles :).
+
+Merci à Mathieu Coingt qui m'a fait découvrir cette astuce (vous pouvez voir son travail sur www.nobsod.fr).
+*/
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
+  font-size: 2.4rem;
+  color: var(--couleur-texte-primaire);
+}
+
+a {
+  color: var(--couleur-bleu1-entete);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/*****************************************************
+ * Responsive design pour le texte sur petits écrans *
+ *****************************************************/
+
+ /*
+ On réduit la taille de la police de caractères sur les petits écrans pour éviter d'avoir de grosses lettres immondes sur les téléphones mobiles et tablettes !
+ Vu qu'on travaille avec l'unité rem principalement, il suffit de modifier la valeur de notre root element qui n'est autre que l'élément html pour réduire immédiatement toutes les tailles de police en une seule ligne !
+ */
+@media (max-width: 950px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+/**********
+ * Entête *
+ **********/
+
+header {
+  background: var(--couleur-bleu1-entete);
+  background: linear-gradient(130.4deg, var(--couleur-bleu1-entete) 18.7%, var(--couleur-bleu2-entete) 86.17%);
+  /* J'utilise des px car peu importe la taille de la police je veux que ces valeurs soient fixes. */
+  padding: 24px 32px 32px 32px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  min-height: 45rem;
+}
+
+header h1 {
+  text-align: center;
+  font-weight: normal;
+  color: white;
+  font-size: 3.6rem;
+  line-height: 1.4em;
+}
+
+h1 img {
+  /*
+  Ici j'utilise l'unité em pour que la marge à droite et la hauteur de l'icône YouTube soit
+  directement proportionnelle à la taille de police de h1. Comme ça l'icône reste toujours
+  cohérente avec la taille du titre, peu importe les préférences utilisateurs de taille de
+  police de caractère (qui est par défaut 16px).
+  */
+  margin-right: 0.3em;
+  vertical-align: middle;
+  height: 1.2em;
+}
+
+/*
+J'utilise flexbox pour centrer verticalement le texte par rapport aux vignettes.
+Voir : https://css-tricks.com/centering-css-complete-guide/
+*/
+header p {
+  color: white;
+  font-size: 3.2rem;
+  line-height: 1.4em;
+  padding-right: 64px;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+#slogan {
+  height: calc(var(--vignettes-nombre-par-ligne) * (var(--vignettes-taille) + 2 * var(--vignettes-marge)));
+  max-width: var(--largeur-max-contenu);
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+#vignettes {
+  width: calc(var(--vignettes-nombre-par-ligne) * (var(--vignettes-taille) + 2 * var(--vignettes-marge)));
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+
+#vignettes > img {
+  border-radius: 50%;
+  width: var(--vignettes-taille);
+  height: var(--vignettes-taille);
+  margin: 4px;
+  -webkit-box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/*********************************
+ * Responsive design de l'entête *
+ *********************************/
+
+/* On cache les vignettes et on centre le slogan */
+@media (max-width: 950px) {
+  #vignettes {
+    display: none;
+  }
+
+  #slogan {
+    height: initial;
+  }
+
+  header {
+    min-height: initial;
+  }
+
+  header p {
+    text-align: center;
+    padding-right: 0;
+    font-size: 2.8rem;
+  }
+}
+
+/****************
+ * Blocs d'info *
+ ****************/
+
+.infos {
+  max-width: calc(var(--largeur-max-contenu) + 2 * (var(--blocs-info-padding) + var(--infos-padding)));
+  margin: 3.2rem auto;
+  padding: 0 var(--infos-padding);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.bloc-info {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1 1 400px;
+  margin: 8px;
+  padding: var(--blocs-info-padding) var(--blocs-info-padding) 0 var(--blocs-info-padding);
+  border-radius: 8px;
+  line-height: 1.4;
+}
+
+.mini-titre {
+  font-weight: bold;
+  font-size: 1.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--couleur-texte-secondaire);
+}
+
+.bloc-info p {
+  margin: 16px 0;
+}
+
+#coming-soon {
+  background-color: #d9f2e3;
+}
+
+#coming-soon span {
+  color: #37a465;
+}
+
+#mini-texte {
+  font-size: 1.6rem;
+  color: var(--couleur-texte-secondaire);
+}
+
+/*
+À la base j'avais mis l'icône directement dans le HTML comme ça "😘 Merci !".
+Le problème c'est que je ne peux pas gérer précisément la distance entre le
+texte et l'icône, niveau design c'est pas top.
+
+Par ailleurs c'est un élément de décoration et pas de contenu à proprement
+parlé. Donc il a plutôt sa place dans le CSS. J'ai donc préféré le mettre
+dans le CSS via le pseudo élément ::before.
+*/
+.bloc-info span::before {
+  margin-right: 4px;
+}
+
+#make-it-grow span::before {
+  content: "🌱";
+}
+
+#merci span::before {
+  content: "😘";
+}
+
+#share-the-love span::before {
+  content: "❤️";
+}
+
+#coming-soon span::before {
+  content: "👌";
+}
+
+#un-affichage-juste span::before {
+  content: "⚖️";
+}
+
+#vocation-pedagogique span::before {
+  content: "✌️";
+}
+
+/**************************************
+ * Responsive design des blocs d'info *
+ **************************************/
+
+/* On les affiche en colonne et pas trop larges */
+@media (max-width: 950px) {
+  .infos {
+    max-width: 60rem;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 55rem;
+            flex: 1 1 55rem;
+  }
+}
+
+/*****************************
+ * Section "votre serviteur" *
+ *****************************/
+
+#votre-serviteur {
+  background: #f5f5f5;
+  padding-bottom: 80px;
+}
+
+#votre-serviteur .contenu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+  max-width: 72rem;
+}
+
+#votre-serviteur .contenu img {
+  -webkit-box-shadow: var(--ombre-logo-chaine);
+  box-shadow: var(--ombre-logo-chaine);
+  border-radius: 50%;
+  width: var(--taille-logo-chaine);
+  height: var(--taille-logo-chaine);
+  margin: 3.2rem 3.2rem 3.2rem 1.6rem;
+}
+
+#votre-serviteur .bloc-info {
+  margin: auto 16px;
+  padding: 0;
+}
+
+#votre-serviteur .bloc-info p {
+  margin-bottom: 0;
+}
+
+#votre-serviteur .bloc-info span::before {
+  content: "👋";
+}
+
+/*****************************************************
+ * Responsive design de la section "votre serviteur" *
+ *****************************************************/
+
+@media (max-width: 750px) {
+  #votre-serviteur .contenu {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-line-pack: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    max-width: 55rem;
+  }
+
+  #votre-serviteur .contenu img {
+    margin: 3.2rem 3.2rem 3.2rem 1.6rem;
+  }
+
+  #votre-serviteur .bloc-info {
+    -ms-flex-preferred-size: initial;
+    flex-basis: initial;
+    padding: 0 var(--blocs-info-padding) 32px var(--blocs-info-padding);
+  }
+
+  #votre-serviteur .bloc-info span {
+    text-align: center;
+    display: block;
+    margin-left: -24px;
+  }
+}
+
+/************
+ * La liste *
+ ************/
+
+#titre-la-liste {
+  font-family: 'Permanent Marker', cursive;
+  font-weight: normal;
+  color: #333;
+  font-size: 5rem;
+  letter-spacing: 0.1em;
+  margin: auto;
+  float: left;
+  position: relative;
+  left: 50%;
+  padding:  16px 32px;
+  transform: translate(-50%, -50%);
+}
+
+#titre-la-liste::before {
+  content: "";
+  display: block;
+  width: 120%;
+  height: 80%;
+  background-color: #ffeb3b;
+  position: absolute;
+  transform: skew(-8deg, -2deg);
+  left: -10%;
+  top: 11%;
+  z-index: -1;
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+#titre-la-liste::after {
+  content: "";
+  display: block;
+  width: 130%;
+  height: 100%;
+  background-color: #C08DF2;
+  position: absolute;
+  transform: skew(-4deg, -3deg);
+  left: -15%;
+  top: 2%;
+  z-index: -2;
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+#liste {
+  margin: 0;
+  padding: 120px 0 12px 0;
+  background: -webkit-gradient(linear, left bottom, left top, from(#f64f59), color-stop(#c471ed), to(#0094ff));
+  background: linear-gradient(to top, #f64f59, #c471ed, #0094ff);
+}
+
+#liste > li {
+  list-style-type: none;
+  margin: 0 auto;
+  max-width: calc(var(--largeur-max-contenu) + 2 * 32px);
+  padding: 0 32px 72px 32px;
+}
+
+#liste > li > div {
+  padding: 32px;
+          -webkit-box-shadow: 0px 4px 6px hsla(0,0,.2);
+                  box-shadow: 0px 5px 16px hsla(0,0%,0%,.2);
+  border-radius: 16px;
+  background: white;
+  position: relative;
+}
+
+/* Statistiques, icône et présentation de la chaîne */
+#liste .nom-chaine {
+  display: inline-block;
+  margin: 0 auto;
+  font-size: 3.6rem;
+  clear: both;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -95%);
+  padding: 16px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+#liste .nom-chaine:before {
+  content: "";
+  display: block;
+  width: 120%;
+  height: 80%;
+  background-color: #ffeb3b;
+  position: absolute;
+  transform: skew(-20deg, -1.5deg);
+  left: -10%;
+  top: 6%;
+  z-index: -1;
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.presentation-chaine {
+  margin-top: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.presentation-chaine img {
+  width: var(--taille-logo-chaine);
+  height: var(--taille-logo-chaine);
+  border-radius: 50%;
+  margin-right: 16px;
+  margin-bottom: 32px;
+  -webkit-box-shadow: var(--ombre-logo-chaine);
+  box-shadow: var(--ombre-logo-chaine);
+}
+
+.presentation-chaine p {
+  margin-top: 16px;
+  overflow-x: auto;
+}
+
+.statistiques-chaine {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 16px 0;
+  list-style-type: none;
+  margin: 0 16px 32px 16px;
+  max-height: var(--taille-logo-chaine);
+  min-width: 250px;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.statistiques-chaine li {
+  color: var(--couleur-texte-secondaire);
+}
+
+.statistiques-chaine li i {
+  position: relative;
+  top: -2px; /* Juste pour corriger un léger décalage de design */
+  color: rgb(45, 45, 45);
+  margin-right: 8px;
+  font-size: 3.2rem;
+  vertical-align: middle;
+}
+
+.statistiques-chaine .nombre {
+  color: var(--couleur-texte-primaire);
+}
+
+/* Tags de la chaîne */
+#liste > li > div > ul {
+  margin-top: 16px;
+  padding-left: 0;
+}
+
+#liste ul li.tag {
+  display: inline-block;
+  color: #6FCF97;
+  font-weight: bold;
+  line-height: normal;
+  font-size: 1.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-right: 16px;
+  margin-bottom: 16px;
+  border: 1px solid;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+/* Bouton pour accéder à la page YouTube de la chaîne */
+#liste > li > div > .bouton {
+  margin-top: 32px;
+  color: var(--couleur-texte-primaire);
+  text-align: center;
+}
+
+#liste > li > div > .bouton > a {
+  position: relative;
+  text-decoration: none;
+}
+
+#liste > li > div > .bouton > a::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 4px;
+  bottom: -2px;
+  right: 0;
+  background: rgba(255,0,0,.1);
+  -webkit-transition: width .3s;
+  -webkit-transition: width background-color .3s;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+#liste > li > div > .bouton > a:hover::after {
+  width: 74%;
+  background: red;
+}
+
+#liste > li > div > .bouton > a > i {
+  position: relative;
+  top: -2px;
+  color: red;
+  vertical-align: middle;
+  font-size: 4.8rem;
+  margin-right: 8px;
+}
+
+/*********************************
+ * Responsive design de la liste *
+ *********************************/
+
+@media (max-width: 950px) {
+  .presentation-chaine {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  #liste span.mini-titre, #liste > li > div > ul {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 575px) {
+  #liste {
+    padding-top: 16px;
+  }
+
+  #liste > li {
+    margin: 80px 0 0 0;
+    padding: 4px 0 0 0;
+  }
+
+  #liste > li > div {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 0;
+  }
+}
+
+/****************************
+ * Le pied de page (footer) *
+ ****************************/
+
+footer {
+  color: var(--couleur-texte-sur-gris-fonce);
+  background: var(--couleur-gris-fonce);
+  padding: 48px 0;
+}
+
+footer p {
+  text-align: center;
+  margin: 0 auto;
+  padding: 16px 32px;
+}
