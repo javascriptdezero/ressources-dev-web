@@ -66,23 +66,31 @@ Le sous-dossier `json` contient le fichier `devweb.json` que je maintiens à la 
 
 Un script nommé `generer-donnees-enrichies.js` contenu dans le sous-dossier `js` est exécuté par `NodeJS` au moment de la construction du site (*build*). Ce script fait appel à l'API YouTube et au fichier `devweb.json` pour récupérer la liste des chaînes sur lesquelles se renseigner.
 
-Ce script va créer un fichier `donnees.json` dans le sous-dossier `json` qui contiendra l'intégralité des données de la chaîne (nom, icône, nombre de vidéos, de vues, d'abonnés, description etc.).
+Ce script va créer un fichier `donnees.json` dans le sous-dossier `json` qui contiendra l'intégralité des informations sur les chaînes (nom, icône, nombre de vidéos, de vues, d'abonnés, description etc.).
 
 Enfin le fichier `script.js` qui est inclu dans le fichier `index.html` vient lire le fichier `donnees.json` et génère le HTML de la liste au moment du chargement du site internet par le navigateur.
 
-Un fichier `TODO` a la racine du projet indique les prochaines fonctionnalités sur lesquelles je dois travailler.
+Un fichier `TODO` à la racine du projet indique les prochaines fonctionnalités sur lesquelles je dois travailler.
 
-> Consultez les commentaires à l'intérieur de chaque fichier pour avoir plus d'informations sur le fonctionnement interne.
+> Consultez les commentaires à l'intérieur de chaque fichier pour avoir plus d'informations sur le fonctionnement interne et le code.
 
 ### Pourquoi cette architecture ?
 
 J'aurai pu faire appel à l'API YouTube directement depuis le fichier `script.js` et récupérer les toutes dernières données depuis YouTube à chaque chargement de la page web.
 
-Oui... mais ça prend pas mal de temps. Ce qui fait que le site ne se chargerait pas immédiatement (du moins pour la partie avec la liste).
+Oui... mais.
+
+Je ne l'ai pas fait pour les raisons suivantes :
+- Ça prend pas mal de temps (1 à 2 secondes) d'envoyer la requête et d'attendre la réponse de YouTube pour avoir les infos sur toutes les chaînes. Avec ma solution, c'est beaucoup plus rapide, on lit le fichier, on génère le HTML, c'est terminé.
+- Ça aurait été plus gourmand en requêtes pour les serveurs YouTube. À chaque nouvelle connexion, une nouvelle requête est faite. Il y a des [quotas](https://developers.google.com/youtube/v3/getting-started#quota) à respecter quand on accède à l'API YouTube. Je suis loin de les atteindre (10 000 unités/jour) mais si le site vient à être connu, je n'aurai pas de soucis.
+- Chaque requête implique une consommation de bande passante. Pour mes utilisateurs sur mobile, je leur épargne des coûts (consommation de batterie, forfait de données 3G/4G).
+- Au lieu de manipuler du JSON dans le code, je vous montre à quoi ça ressemble dans un fichier, niveau pédagogique, c'est mieux.
 
 Par ailleurs, avoir les *toutes* dernières statistiques des chaînes ne me semble pas hyper important. Avec le système en place, à chaque fois que je fais une mise à jour, les données sont mises à jour également.
 
-À terme je vais exécuter le script de construction une fois par jour pour mettre à jour les données des chaînes régulièrement sans que j'ai besoin de mettre à jour le dépôt Git.
+À terme je vais exécuter le script de construction une fois par jour pour mettre à jour les données des chaînes régulièrement sans que j'ai besoin de mettre à jour le dépôt Git. Netlify permet de faire ça assez simplement avec Zapier par exemple.
+
+> Comme toute architecture, celle-ci a des avantages et des inconvénients, je serai ravi d'en discuter avec vous si vous le souhaitez !
 
 ## Comment télécharger et lancer ce site chez vous ?
 
