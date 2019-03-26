@@ -40,7 +40,7 @@ fs.readFile(FICHIER_CLE_API, (err, cleApi) => {
       console.log(`Clé d'authentification trouvée dans la variable d'environnement '${VAR_ENV_CLE_API}'.`);
       cleApi = process.env[VAR_ENV_CLE_API];
     } else {
-      console.log(`Clé d'authentification introuvable pour se connecter à l'API YouTube. Il n'y a pas de fichier ${FICHIER_CLE_API}) ni de variable d'environnement '${VAR_ENV_CLE_API}'.`);
+      console.log(`Clé d'authentification introuvable pour se connecter à l'API YouTube. Il n'y a pas de fichier ${FICHIER_CLE_API} ni de variable d'environnement '${VAR_ENV_CLE_API}'.`);
       return;
     }
   } else {
