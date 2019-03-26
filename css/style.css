@@ -477,7 +477,7 @@ dans le CSS via le pseudo élément ::before.
   list-style-type: none;
   margin: 0 auto;
   max-width: calc(var(--largeur-max-contenu) + 2 * 32px);
-  padding: 0 32px 32px 32px;
+  padding: 0 32px 72px 32px;
 }
 
 #liste > li > div {
@@ -486,14 +486,35 @@ dans le CSS via le pseudo élément ::before.
                   box-shadow: 0px 5px 16px hsla(0,0%,0%,.2);
   border-radius: 16px;
   background: white;
+  position: relative;
 }
 
 /* Statistiques, icône et présentation de la chaîne */
 #liste .nom-chaine {
-  display: block;
-  text-align: center;
+  display: inline-block;
+  margin: 0 auto;
   font-size: 3.6rem;
   clear: both;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -95%);
+  padding: 16px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+#liste .nom-chaine:before {
+  content: "";
+  display: block;
+  width: 120%;
+  height: 80%;
+  background-color: #ffeb3b;
+  position: absolute;
+  transform: skew(-20deg, -1.5deg);
+  left: -10%;
+  top: 6%;
+  z-index: -1;
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .presentation-chaine {
@@ -636,11 +657,11 @@ dans le CSS via le pseudo élément ::before.
 
 @media (max-width: 575px) {
   #liste {
-    padding: 0;
+    padding-top: 16px;
   }
 
   #liste > li {
-    margin: 0;
+    margin: 80px 0 0 0;
     padding: 4px 0 0 0;
   }
 
