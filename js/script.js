@@ -54,6 +54,10 @@ request.onload = function() {
   const donneesChaines = melanger(request.response);
   const liste = document.getElementById('liste');
 
+  // Mise à jour du compteur de chaînes YouTube
+  const compteur = document.getElementById('compteur');
+  compteur.textContent = `${donneesChaines.length} ${compteur.textContent}`;
+
   donneesChaines.forEach((chaine) => {
     const li = document.createElement('li');
     const div = document.createElement('div');
