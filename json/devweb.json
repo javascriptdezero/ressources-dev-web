@@ -193,5 +193,9 @@
   {
     "url": "https://www.youtube.com/channel/UCxFKrPjiHzbRXwgYvufXM2w",
     "tags": ["javascript"]
+  },
+  {
+    "url": "https://www.youtube.com/channel/UCb-D560WkMEPE7dwNta_nqA",
+    "tags": ["php", "conférences", "bonnes pratiques"]
   }
 ]
