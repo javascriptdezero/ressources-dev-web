@@ -197,5 +197,9 @@
   {
     "url": "https://www.youtube.com/channel/UCb-D560WkMEPE7dwNta_nqA",
     "tags": ["php", "conférences", "bonnes pratiques"]
+  },
+  {
+    "url": "https://www.youtube.com/channel/UCS2e0hEJMhwd6bNscS60xTg",
+    "tags": ["html", "css", "javascript", "algorithmie", "php"]
   }
 ]
