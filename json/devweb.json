@@ -205,5 +205,9 @@
   {
     "url": "https://www.youtube.com/channel/UCUjo_IKa9Cqkx_x-rMly8MA",
     "tags": ["html", "css", "git", "vscode", "bootstrap", "angular", "conseils & astuces", "ruby", "ruby on rails", "laravel", "react", "wordpress", "vuejs"]
+  },
+  {
+    "url": "https://www.youtube.com/channel/UC_n2nsURL8YxaLeRLAWzsMQ",
+    "tags": ["html", "css", "javascript"]
   }
 ]
