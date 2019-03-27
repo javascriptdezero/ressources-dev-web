@@ -6,7 +6,7 @@
       "formation",
       "reconversion professionnelle",
       "bonnes pratiques",
-      "astuces",
+      "conseils & astuces",
       "vscode",
       "algorithmie",
       "battledev"
@@ -23,10 +23,8 @@
       "css",
       "javascript",
       "react",
-      "firebase",
       "pwa",
       "sass",
-      "markdown",
       "phaser.js",
       "jquery",
       "gatsby",
@@ -34,8 +32,7 @@
       "sublime",
       "vscode",
       "algorithmie",
-      "conseils pour débutants",
-      "astuces"
+      "conseils & astuces"
     ]
   },
   {
@@ -47,53 +44,47 @@
       "php",
       "cakephp",
       "nodejs",
-      "vuejs",
+      "vue",
       "symfony",
       "react",
       "wordpress",
       "bootstrap",
-      "application mobile",
       "git",
       "less",
       "sass",
       "gulp",
-      "compass",
       "sublime",
       "phpstorm",
       "jquery",
-      "mysql",
-      "markdown",
       "algorithmie",
       "angular",
       "svg",
       "poo en php",
       "laravel",
-      "tests unitaires",
       "ruby",
       "ruby on rails",
-      "linux",
       "webpack"
     ]
   },
   {
     "url": "https://www.youtube.com/channel/UCeZIdBQiLoH3zi-VCHwi5VQ",
-    "tags": ["html", "angular", "vscode", "bootstrap", "astuces", "conseils", "interviews"]
+    "tags": ["html", "angular", "vscode", "bootstrap", "conseils & astuces", "interviews"]
   },
   {
     "url": "https://www.youtube.com/channel/UCLOAPb7ATQUs_nDs9ViLcMw",
-    "tags": ["vlog", "conseils", "astuces", "humour", "inspiration", "le wagon", "duel de devs", "interviews"]
+    "tags": ["vlog", "conseils & astuces", "humour", "inspiration", "le wagon", "duel de devs", "interviews"]
   },
   {
     "url": "https://www.youtube.com/channel/UChyW1pwcQT2RA4Q2onfNfpg",
-    "tags": ["php", "laravel", "vuejs", "laracon"]
+    "tags": ["php", "laravel", "vue", "laracon"]
   },
   {
     "url": "https://www.youtube.com/channel/UC7BNBNLwMF8GjgXLDP8PWQw",
-    "tags": ["vlog", "conseils", "astuces", "html", "css", "javascript", "php"]
+    "tags": ["html", "css", "javascript", "vlog", "conseils & astuces", "php"]
   },
   {
     "url": "https://www.youtube.com/channel/UCjDg7LaaMzmuhj6I1jTzb1Q",
-    "tags": ["astuces", "conseils"]
+    "tags": ["conseils & astuces", "freelance"]
   },
   {
     "url": "https://www.youtube.com/channel/UC0FIKAE7xORm6Y91kWbg4cA",
@@ -103,20 +94,16 @@
       "bootstrap",
       "jquery",
       "javascript",
-      "conseils",
-      "astuces",
+      "conseils & astuces",
       "php",
-      "sql",
       "wordpress",
       "interviews",
-      "formation",
-      "dom",
-      "frameworks"
+      "formation"
     ]
   },
   {
     "url": "https://www.youtube.com/channel/UCftI9Qw4HJXKVNzhuqZM_2w",
-    "tags": ["vlog", "école 42", "javascript", "gaming"]
+    "tags": ["javascript", "vlog", "école 42"]
   },
   {
     "url": "https://www.youtube.com/channel/UCzuaB4F2znrMggxcwUuVhAw",
@@ -128,8 +115,7 @@
       "cakephp",
       "jquery",
       "bootstrap",
-      "conseils",
-      "astuces",
+      "conseils & astuces",
       "nodejs",
       "angular",
       "ruby",
@@ -144,23 +130,23 @@
   },
   {
     "url": "https://www.youtube.com/channel/UCgJERWtcvu-JiPq5wBkYF1g",
-    "tags": ["javascript", "react", "formation", "nodejs", "graphql"]
+    "tags": ["javascript", "react", "formation", "nodejs"]
   },
   {
     "url": "https://www.youtube.com/channel/UCsFoQ4A9CZbF3qag317uZZQ",
-    "tags": ["html", "css", "javascript", "php", "mysql", "jquery", "wordpress"]
+    "tags": ["html", "css", "javascript", "php", "jquery", "wordpress"]
   },
   {
     "url": "https://www.youtube.com/channel/UCUSRY5EcZAhSbz1Q1QuQw0w",
-    "tags": ["html", "css", "php", "interviews", "vlog", "javascript"]
+    "tags": ["html", "css", "javascript", "php", "interviews", "vlog"]
   },
   {
     "url": "https://www.youtube.com/channel/UCIHVyohXw6j2T-83-uLngEg",
-    "tags": ["html", "css", "php", "interviews", "gaming"]
+    "tags": ["html", "css", "php", "interviews"]
   },
   {
     "url": "https://www.youtube.com/channel/UCFfJNxWTuD8UCnG5JNSiqkw",
-    "tags": ["html", "css", "gaming"]
+    "tags": ["html", "css"]
   },
   {
     "url": "https://www.youtube.com/channel/UCJFSN6epvy4HGjujPhuhGvg",
@@ -188,7 +174,7 @@
   },
   {
     "url": "https://www.youtube.com/channel/UC18RbwcHN3cP8Q-K53PF-JQ",
-    "tags": ["html", "css", "javascript", "vscode", "nodejs", "mongodb"]
+    "tags": ["html", "css", "javascript", "vscode", "nodejs"]
   },
   {
     "url": "https://www.youtube.com/channel/UCxFKrPjiHzbRXwgYvufXM2w",
@@ -204,7 +190,21 @@
   },
   {
     "url": "https://www.youtube.com/channel/UCUjo_IKa9Cqkx_x-rMly8MA",
-    "tags": ["html", "css", "git", "vscode", "bootstrap", "angular", "conseils & astuces", "ruby", "ruby on rails", "laravel", "react", "wordpress", "vuejs"]
+    "tags": [
+      "html",
+      "css",
+      "git",
+      "vscode",
+      "bootstrap",
+      "angular",
+      "conseils & astuces",
+      "ruby",
+      "ruby on rails",
+      "laravel",
+      "react",
+      "wordpress",
+      "vue"
+    ]
   },
   {
     "url": "https://www.youtube.com/channel/UC_n2nsURL8YxaLeRLAWzsMQ",
