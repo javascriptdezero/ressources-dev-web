@@ -473,11 +473,14 @@ dans le CSS via le pseudo élément ::before.
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  color: hsla(205, 99%, 79%, 1);
-  font-size: 2.8rem;
+  color: hsl(205, 100%, 23%);
+  background: #57b9ff;
+  font-size: 2rem;
   border-radius: 16px;
   padding: 8px 16px;
   margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
 #liste {
