@@ -209,5 +209,9 @@
   {
     "url": "https://www.youtube.com/channel/UC_n2nsURL8YxaLeRLAWzsMQ",
     "tags": ["html", "css", "javascript"]
+  },
+  {
+    "url": "https://www.youtube.com/channel/UCY_guo_AYBs0cIkeMVc16iw",
+    "tags": ["angular", "meteor", "express", "ionic", "nodejs", "javascript", "pwa", "meanjs"]
   }
 ]
