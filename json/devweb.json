@@ -189,5 +189,9 @@
   {
     "url": "https://www.youtube.com/channel/UC18RbwcHN3cP8Q-K53PF-JQ",
     "tags": ["html", "css", "javascript", "vscode", "nodejs", "mongodb"]
+  },
+  {
+    "url": "https://www.youtube.com/channel/UCxFKrPjiHzbRXwgYvufXM2w",
+    "tags": ["javascript"]
   }
 ]
