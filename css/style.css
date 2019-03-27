@@ -482,8 +482,8 @@ dans le CSS via le pseudo élément ::before.
 
 #liste > li > div {
   padding: 32px;
-          -webkit-box-shadow: 0px 4px 6px hsla(0,0,.2);
-                  box-shadow: 0px 5px 16px hsla(0,0%,0%,.2);
+  -webkit-box-shadow: 0px 4px 6px hsla(0,0,.2);
+  box-shadow: 0px 5px 16px hsla(0,0%,0%,.2);
   border-radius: 16px;
   background: white;
   position: relative;
@@ -506,19 +506,20 @@ dans le CSS via le pseudo élément ::before.
 #liste .nom-chaine:before {
   content: "";
   display: block;
-  width: 120%;
-  height: 80%;
+  width: 100%;
+  height: 100%;
   background-color: #ffeb3b;
   position: absolute;
   transform: skew(-20deg, -1.5deg);
-  left: -10%;
-  top: 6%;
+  left: -16px;
+  top: 0;
+  padding: 0 16px;
   z-index: -1;
   box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .presentation-chaine {
-  margin-top: 16px;
+  margin-top: 32px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -652,6 +653,19 @@ dans le CSS via le pseudo élément ::before.
 
   #liste span.mini-titre, #liste > li > div > ul {
     margin-left: 0;
+  }
+}
+
+/* Gestion des noms de chaînes très longs */
+@media (max-width: 750px) {
+  #liste .nom-chaine {
+    position: relative;
+    white-space: normal;
+    max-width: 90%;
+  }
+
+  .presentation-chaine {
+    margin-top: -32px;
   }
 }
 
