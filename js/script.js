@@ -148,8 +148,9 @@ request.onload = function() {
         // On ajoute le titre de la catégorie à la div principale
         div.appendChild(titreCategorie);
 
-        // On crée la liste des tags contenus dans cette catégorie
+        // On crée la liste des tags contenus dans cette catégorie, triée par ordre alphabétique
         const listeTags = document.createElement('ul');
+        chaine[categorie].sort();
         chaine[categorie].forEach(tag => {
           const li = document.createElement('li');
           li.classList.add('tag');
