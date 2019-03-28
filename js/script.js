@@ -66,6 +66,9 @@ request.onload = function() {
     const nomChaine = document.createElement('span');
     nomChaine.classList.add('nom-chaine');
     nomChaine.textContent = chaine.titre;
+    
+    // On ajoute le titre de la chaîne à la div principale
+    div.appendChild(nomChaine);
 
     // Bloc de présentation
     const presentationChaine = document.createElement('div');
@@ -127,23 +130,37 @@ request.onload = function() {
     // Il faut remplacer les retours à la ligne (\n) avec la balise <br/> pour ne pas tout avoir sur une seule ligne
     descriptionChaine.innerHTML = chaine.description.replace(/\n/g, '<br/>');
 
-    // On ajoute le titre tags
-    const titreTags = document.createElement('span');
-    titreTags.classList.add('mini-titre');
-    titreTags.textContent = "tags";
+    // On ajoute le bloc de presentation à la div principale
+    div.appendChild(presentationChaine);
+    presentationChaine.appendChild(iconeChaine);
+    presentationChaine.appendChild(statistiquesChaine);
+    presentationChaine.appendChild(descriptionChaine);
 
-    // Liste des tags
-    const listeTags = document.createElement('ul');
-    // Si auncun tag n'est indiqué, on affiche simplement "Non renseigné"
-    if (chaine.tags.length === 1 && chaine.tags[0].length === 0) {
-      chaine.tags = ["Non renseigné"];
-    }
-    chaine.tags.forEach(tag => {
-      const li = document.createElement('li');
-      li.classList.add('tag');
-      li.textContent = tag;
-      listeTags.appendChild(li);
-    })
+    // Affichage des catégories, on n'affiche les catégories que si elles contiennent des tags
+    const categories = ["langages", "frameworks", "outils", "autre"];
+    categories.forEach(categorie => {
+      if (chaine[categorie].length > 0) {
+        // On crée le titre correspondant à la catégorie
+        const titreCategorie = document.createElement('span');
+        titreCategorie.classList.add('mini-titre');
+        titreCategorie.textContent = categorie;
+
+        // On ajoute le titre de la catégorie à la div principale
+        div.appendChild(titreCategorie);
+
+        // On crée la liste des tags contenus dans cette catégorie
+        const listeTags = document.createElement('ul');
+        chaine[categorie].forEach(tag => {
+          const li = document.createElement('li');
+          li.classList.add('tag');
+          li.textContent = tag;
+          listeTags.appendChild(li);
+        })
+
+        // On ajoute la liste des tags de la catégorie à la div principale
+        div.appendChild(listeTags);
+      }
+    });
 
     // Bouton
     const bouton = document.createElement('div');
@@ -163,14 +180,7 @@ request.onload = function() {
     lienChaine.appendChild(iconeBouton);
     lienChaine.appendChild(document.createTextNode("Voir cette chaîne"));
 
-    // On ajoute tous les éléments à la div principale
-    div.appendChild(nomChaine);
-    div.appendChild(presentationChaine);
-    presentationChaine.appendChild(iconeChaine);
-    presentationChaine.appendChild(statistiquesChaine);
-    presentationChaine.appendChild(descriptionChaine);
-    div.appendChild(titreTags);
-    div.appendChild(listeTags);
+    // On ajoute le bouton à la div principale
     div.appendChild(bouton);
 
     // On ajoute ce développeur à la liste globale
