@@ -62,7 +62,7 @@ Le projet est composé d'un fichier `index.html` qui contient le contenu statiqu
 
 Les autres fichiers sont répartis dans des sous-dossiers (histoire de classer les fichiers communs) : `css`, `images`, `js`, `json` etc.
 
-Le sous-dossier `json` contient le fichier `devweb.json` que je maintiens à la main. J'ajoute une nouvelle entrée avec le lien vers la chaîne YouTube et les tags manuellement à chaque nouvelle découverte.
+Le sous-dossier `json` contient le fichier `devweb.json` que je maintiens à la main. J'ajoute une nouvelle entrée avec le lien vers la chaîne YouTube et les catégories manuellement à chaque nouvelle découverte. Avant j'utilisais des tags mélangés, mais j'ai fait le tri dans des catégories grâce à un petit script que vous trouverez dans le sous-dossier `outils`.
 
 Un script nommé `generer-donnees-enrichies.js` contenu dans le sous-dossier `js` est exécuté par `NodeJS` au moment de la construction du site (*build*). Ce script fait appel à l'API YouTube et au fichier `devweb.json` pour récupérer la liste des chaînes sur lesquelles se renseigner.
 
