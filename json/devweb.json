@@ -1,217 +1,198 @@
 [
   {
     "url": "https://www.youtube.com/channel/UCMzJVrWeaKUotLPWTdx6HuQ",
-    "tags": [
-      "javascript",
+    "langages": ["javascript"],
+    "frameworks": [],
+    "outils": ["vscode"],
+    "autre": [
       "formation",
       "reconversion professionnelle",
       "bonnes pratiques",
       "conseils & astuces",
-      "vscode",
-      "algorithmie",
+      "algorithmique",
       "battledev"
     ]
   },
   {
     "url": "https://www.youtube.com/channel/UCS71mal_TkTW_PpZR9YLpIA",
-    "tags": ["symfony", "php", "html", "css", "javascript", "react", "twig", "algorithmie"]
+    "langages": ["php", "html", "css", "javascript"],
+    "frameworks": ["symfony", "react"],
+    "outils": ["twig"],
+    "autre": ["algorithmique"]
   },
   {
     "url": "https://www.youtube.com/channel/UChhPkjgG1-iLUOmURGdgQrw",
-    "tags": [
-      "html",
-      "css",
-      "javascript",
-      "react",
-      "pwa",
-      "sass",
-      "phaser.js",
-      "jquery",
-      "gatsby",
-      "emmet",
-      "sublime",
-      "vscode",
-      "algorithmie",
-      "conseils & astuces"
-    ]
+    "langages": ["html", "css", "javascript", "sass"],
+    "frameworks": ["react", "pwa", "phaser.js", "jquery", "gatsby"],
+    "outils": ["emmet", "sublime", "vscode"],
+    "autre": ["algorithmique", "conseils & astuces"]
   },
   {
     "url": "https://www.youtube.com/channel/UCj_iGliGCkLcHSZ8eqVNPDQ",
-    "tags": [
-      "html",
-      "css",
-      "javascript",
-      "php",
-      "cakephp",
-      "nodejs",
-      "vue",
-      "symfony",
-      "react",
-      "wordpress",
-      "bootstrap",
-      "git",
-      "less",
-      "sass",
-      "gulp",
-      "sublime",
-      "phpstorm",
-      "jquery",
-      "algorithmie",
-      "angular",
-      "svg",
-      "poo en php",
-      "laravel",
-      "ruby",
-      "ruby on rails",
-      "webpack"
-    ]
+    "langages": ["html", "css", "javascript", "php", "less", "sass", "ruby"],
+    "frameworks": ["cakephp", "vue", "symfony", "react", "bootstrap", "jquery", "angular", "laravel", "ruby on rails"],
+    "outils": ["nodejs", "wordpress", "git", "gulp", "sublime", "phpstorm", "webpack"],
+    "autre": ["algorithmique"]
   },
   {
     "url": "https://www.youtube.com/channel/UCeZIdBQiLoH3zi-VCHwi5VQ",
-    "tags": ["html", "angular", "vscode", "bootstrap", "conseils & astuces", "interviews"]
+    "langages": ["html"],
+    "frameworks": ["angular", "bootstrap"],
+    "outils": ["vscode"],
+    "autre": ["conseils & astuces", "interviews"]
   },
   {
     "url": "https://www.youtube.com/channel/UCLOAPb7ATQUs_nDs9ViLcMw",
-    "tags": ["vlog", "conseils & astuces", "humour", "inspiration", "le wagon", "duel de devs", "interviews"]
+    "langages": ["html", "css"],
+    "frameworks": [],
+    "outils": [],
+    "autre": ["vlog", "conseils & astuces", "humour", "inspiration", "duel de devs", "interviews"]
   },
   {
     "url": "https://www.youtube.com/channel/UChyW1pwcQT2RA4Q2onfNfpg",
-    "tags": ["php", "laravel", "vue", "laracon"]
+    "langages": ["php"],
+    "frameworks": ["laravel", "vue"],
+    "outils": [],
+    "autre": ["laracon"]
   },
   {
     "url": "https://www.youtube.com/channel/UC7BNBNLwMF8GjgXLDP8PWQw",
-    "tags": ["html", "css", "javascript", "vlog", "conseils & astuces", "php"]
+    "langages": ["html", "css", "javascript", "php"],
+    "frameworks": [],
+    "outils": [],
+    "autre": ["vlog", "conseils & astuces"]
   },
   {
     "url": "https://www.youtube.com/channel/UCjDg7LaaMzmuhj6I1jTzb1Q",
-    "tags": ["conseils & astuces", "freelance"]
+    "langages": [],
+    "frameworks": [],
+    "outils": [],
+    "autre": ["conseils & astuces", "freelance"]
   },
   {
     "url": "https://www.youtube.com/channel/UC0FIKAE7xORm6Y91kWbg4cA",
-    "tags": [
-      "html",
-      "css",
-      "bootstrap",
-      "jquery",
-      "javascript",
-      "conseils & astuces",
-      "php",
-      "wordpress",
-      "interviews",
-      "formation"
-    ]
+    "langages": ["html", "css", "javascript", "php"],
+    "frameworks": ["bootstrap", "jquery"],
+    "outils": ["wordpress"],
+    "autre": ["conseils & astuces", "interviews", "formation"]
   },
   {
     "url": "https://www.youtube.com/channel/UCftI9Qw4HJXKVNzhuqZM_2w",
-    "tags": ["javascript", "vlog", "école 42"]
+    "langages": ["javascript"],
+    "frameworks": [],
+    "outils": [],
+    "autre": ["vlog", "école 42"]
   },
   {
     "url": "https://www.youtube.com/channel/UCzuaB4F2znrMggxcwUuVhAw",
-    "tags": [
-      "html",
-      "css",
-      "javascript",
-      "php",
-      "cakephp",
-      "jquery",
-      "bootstrap",
-      "conseils & astuces",
-      "nodejs",
-      "angular",
-      "ruby",
-      "wordpress",
-      "git",
-      "poo en php",
-      "laravel",
-      "react",
-      "react native",
-      "symfony"
-    ]
+    "langages": ["html", "css", "javascript", "php", "ruby"],
+    "frameworks": ["cakephp", "jquery", "bootstrap", "angular", "laravel", "react", "react native", "symfony"],
+    "outils": ["nodejs", "wordpress", "git"],
+    "autre": ["conseils & astuces"]
   },
   {
     "url": "https://www.youtube.com/channel/UCgJERWtcvu-JiPq5wBkYF1g",
-    "tags": ["javascript", "react", "formation", "nodejs"]
+    "langages": ["javascript"],
+    "frameworks": ["react"],
+    "outils": ["nodejs"],
+    "autre": ["formation"]
   },
   {
     "url": "https://www.youtube.com/channel/UCsFoQ4A9CZbF3qag317uZZQ",
-    "tags": ["html", "css", "javascript", "php", "jquery", "wordpress"]
+    "langages": ["html", "css", "javascript", "php"],
+    "frameworks": ["jquery"],
+    "outils": ["wordpress"],
+    "autre": []
   },
   {
     "url": "https://www.youtube.com/channel/UCUSRY5EcZAhSbz1Q1QuQw0w",
-    "tags": ["html", "css", "javascript", "php", "interviews", "vlog"]
+    "langages": ["html", "css", "javascript", "php"],
+    "frameworks": [],
+    "outils": [],
+    "autre": ["interviews", "vlog"]
   },
   {
     "url": "https://www.youtube.com/channel/UCIHVyohXw6j2T-83-uLngEg",
-    "tags": ["html", "css", "php", "interviews"]
+    "langages": ["html", "css", "php"],
+    "frameworks": [],
+    "outils": [],
+    "autre": ["interviews"]
   },
   {
     "url": "https://www.youtube.com/channel/UCFfJNxWTuD8UCnG5JNSiqkw",
-    "tags": ["html", "css"]
+    "langages": ["html", "css"],
+    "frameworks": [],
+    "outils": [],
+    "autre": []
   },
   {
     "url": "https://www.youtube.com/channel/UCJFSN6epvy4HGjujPhuhGvg",
-    "tags": ["html", "css", "javascript", "symfony", "php"]
+    "langages": ["html", "css", "javascript", "php"],
+    "frameworks": ["symfony"],
+    "outils": [],
+    "autre": []
   },
   {
     "url": "https://www.youtube.com/channel/UCXYs_tVa-VFm5f6bWrPybhA",
-    "tags": ["conseils & astuces", "interviews"]
+    "langages": [],
+    "frameworks": [],
+    "outils": [],
+    "autre": ["conseils & astuces", "interviews"]
   },
   {
     "url": "https://www.youtube.com/channel/UC9zdcXq2z3GY3UVhlADNijg",
-    "tags": [
-      "html",
-      "css",
-      "javascript",
-      "sass",
-      "gulp",
-      "jquery",
-      "react native",
-      "git",
-      "ruby",
-      "ruby on rails",
-      "bulma"
-    ]
+    "langages": ["html", "css", "javascript", "sass", "ruby"],
+    "frameworks": ["jquery", "react native", "ruby on rails", "bulma"],
+    "outils": ["gulp", "git"],
+    "autre": []
   },
   {
     "url": "https://www.youtube.com/channel/UC18RbwcHN3cP8Q-K53PF-JQ",
-    "tags": ["html", "css", "javascript", "vscode", "nodejs"]
+    "langages": ["html", "css", "javascript"],
+    "frameworks": [],
+    "outils": ["vscode", "nodejs"],
+    "autre": []
   },
   {
     "url": "https://www.youtube.com/channel/UCxFKrPjiHzbRXwgYvufXM2w",
-    "tags": ["javascript"]
+    "langages": ["javascript"],
+    "frameworks": [],
+    "outils": [],
+    "autre": []
   },
   {
     "url": "https://www.youtube.com/channel/UCb-D560WkMEPE7dwNta_nqA",
-    "tags": ["php", "conférences", "bonnes pratiques"]
+    "langages": ["php"],
+    "frameworks": [],
+    "outils": [],
+    "autre": ["conférences", "bonnes pratiques"]
   },
   {
     "url": "https://www.youtube.com/channel/UCS2e0hEJMhwd6bNscS60xTg",
-    "tags": ["html", "css", "javascript", "algorithmie", "php"]
+    "langages": ["html", "css", "javascript", "php"],
+    "frameworks": [],
+    "outils": [],
+    "autre": ["algorithmique"]
   },
   {
     "url": "https://www.youtube.com/channel/UCUjo_IKa9Cqkx_x-rMly8MA",
-    "tags": [
-      "html",
-      "css",
-      "git",
-      "vscode",
-      "bootstrap",
-      "angular",
-      "conseils & astuces",
-      "ruby",
-      "ruby on rails",
-      "laravel",
-      "react",
-      "wordpress",
-      "vue"
-    ]
+    "langages": ["html", "css", "ruby"],
+    "frameworks": ["bootstrap", "angular", "ruby on rails", "laravel", "react", "vue"],
+    "outils": ["git", "vscode", "wordpress"],
+    "autre": ["conseils & astuces"]
   },
   {
     "url": "https://www.youtube.com/channel/UC_n2nsURL8YxaLeRLAWzsMQ",
-    "tags": ["html", "css", "javascript"]
+    "langages": ["html", "css", "javascript"],
+    "frameworks": [],
+    "outils": [],
+    "autre": []
   },
   {
     "url": "https://www.youtube.com/channel/UCY_guo_AYBs0cIkeMVc16iw",
-    "tags": ["angular", "meteor", "express", "ionic", "nodejs", "javascript", "pwa", "meanjs"]
+    "langages": ["javascript"],
+    "frameworks": ["angular", "meteor", "express", "ionic", "pwa", "meanjs"],
+    "outils": ["nodejs"],
+    "autre": []
   }
 ]
