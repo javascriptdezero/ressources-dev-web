@@ -194,5 +194,12 @@
     "frameworks": ["angular", "meteor", "express", "ionic", "pwa", "meanjs"],
     "outils": ["nodejs"],
     "autre": []
+  },
+  {
+    "url": "https://www.youtube.com/user/thenicwalle",
+    "langages": ["php", "html", "css", "javascript"],
+    "frameworks": [],
+    "outils": ["PHPStorm"],
+    "autre": []
   }
 ]
