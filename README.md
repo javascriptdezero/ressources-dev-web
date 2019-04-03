@@ -86,9 +86,11 @@ Je ne l'ai pas fait pour les raisons suivantes :
 - Chaque requête implique une consommation de bande passante. Pour mes utilisateurs sur mobile, je leur épargne des coûts (consommation de batterie, forfait de données 3G/4G).
 - Au lieu de manipuler du JSON dans le code, je vous montre à quoi ça ressemble dans un fichier, niveau pédagogique, c'est mieux.
 
-Par ailleurs, avoir les *toutes* dernières statistiques des chaînes ne me semble pas hyper important. Avec le système en place, à chaque fois que je fais une mise à jour, les données sont mises à jour également.
+Par ailleurs, avoir les *toutes* dernières statistiques des chaînes ne me semble pas hyper important. Une mise à jour quotidienne est suffisante comparé à du temps réel.
 
-À terme je vais exécuter le script de construction une fois par jour pour mettre à jour les données des chaînes régulièrement sans que j'ai besoin de mettre à jour le dépôt Git. Netlify permet de faire ça assez simplement avec Zapier par exemple.
+J'ai donc mis en place grâce à Zapier un déploiement automatique régulier et quotidien (à minuit) du site web.
+
+Ainsi le script de construction s'exécute une fois par jour et met à jour les données des chaînes sans que j'ai besoin de mettre à jour le dépôt Git.
 
 > Comme toute architecture, celle-ci a des avantages et des inconvénients, je serai ravi d'en discuter avec vous si vous le souhaitez !
 
