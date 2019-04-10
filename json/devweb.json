@@ -194,5 +194,12 @@
     "frameworks": ["angular", "meteor", "express", "ionic", "pwa", "meanjs"],
     "outils": ["nodejs"],
     "autre": []
+  },
+  {
+    "url": "https://www.youtube.com/channel/UCKFAwlgWiAB4vUpgnS63qog",
+    "langages": [],
+    "frameworks": [],
+    "outils": [],
+    "autre": ["conférences", "bonnes pratiques", "conseils & astuces"]
   }
 ]
