@@ -5,7 +5,7 @@
   "main": "generer-donnees-enrichies.js",
   "dependencies": {
     "google-auth-library": "^3.1.0",
-    "googleapis": "^37.2.0"
+    "googleapis": "^43.0.0"
   },
   "devDependencies": {},
   "scripts": {
