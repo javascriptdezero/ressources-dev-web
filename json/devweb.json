@@ -194,5 +194,26 @@
     "frameworks": [],
     "outils": [],
     "autre": ["conférences", "bonnes pratiques", "conseils & astuces"]
+  },
+  {
+    "url": "https://www.youtube.com/channel/UCmJ6Z6gXjjylSVbPoBvj-ow",
+    "langages": ["css", "php", "ajax", "javascript"],
+    "frameworks": ["bootstrap"],
+    "outils": [],
+    "autre": []
+  },
+  {
+    "url": "https://www.youtube.com/channel/UC24tiAt2fssTBgJKeWTwASQ",
+    "langages": ["javascript"],
+    "frameworks": [],
+    "outils": [],
+    "autre": []
+  },
+  {
+    "url": "https://www.youtube.com/channel/UC7AVPVO21rPjgC8W9dPYEvw",
+    "langages": ["html", "css", "javascript", "php", "ajax"],
+    "frameworks": [],
+    "outils": [],
+    "autre": []
   }
 ]
