@@ -79,7 +79,7 @@ function demarrer(cleApi) {
   Petite optimisation d'accès réseau : on demande toutes les chaînes dans une seule requête !
 
   Pour ça il suffit par exemple de passer comme argument id: "id1,id2,id3".
-  Voir https://developers.google.com/youtube/v3/docs/captions/list
+  Voir https://developers.google.com/youtube/v3/docs/channels/list
   */
   // youtube.service.channels.list(
   youtube.channels.list(
