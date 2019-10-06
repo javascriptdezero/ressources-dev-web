@@ -215,5 +215,33 @@
     "frameworks": [],
     "outils": [],
     "autre": []
+  },
+  {
+    "url": "https://www.youtube.com/channel/UC36hi0WMeiR8HpUy-A2s4vQ",
+    "langages": ["php", "javascript"],
+    "frameworks": ["laravel"],
+    "outils": [],
+    "autre": []
+  },
+  {
+    "url": "https://www.youtube.com/channel/UCdJatu-go2dPm5BYI4DFkNg",
+    "langages": ["php", "javascript"],
+    "frameworks": [],
+    "outils": [],
+    "autre": []
+  },
+  {
+    "url": "https://www.youtube.com/channel/UCVcHtPht0zck_sWeTc5qGhw",
+    "langages": ["html", "javascript", "php"],
+    "frameworks": [],
+    "outils": [],
+    "autre": []
+  },
+  {
+    "url": "https://www.youtube.com/channel/UCMFbNXUkjSUJ6WC20tGTzJg",
+    "langages": ["html", "css", "javascript"],
+    "frameworks": ["react", "bootstrap", "bulma"],
+    "outils": [],
+    "autre": []
   }
 ]
