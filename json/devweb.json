@@ -70,13 +70,6 @@
     "autre": ["conseils & astuces", "freelance"]
   },
   {
-    "url": "https://www.youtube.com/channel/UC0FIKAE7xORm6Y91kWbg4cA",
-    "langages": ["html", "css", "javascript", "php"],
-    "frameworks": ["bootstrap", "jquery"],
-    "outils": ["wordpress"],
-    "autre": ["conseils & astuces", "interviews", "formation"]
-  },
-  {
     "url": "https://www.youtube.com/channel/UCftI9Qw4HJXKVNzhuqZM_2w",
     "langages": ["javascript"],
     "frameworks": [],
