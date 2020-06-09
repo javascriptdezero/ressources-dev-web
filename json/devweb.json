@@ -238,6 +238,13 @@
     "autre": []
   },
   {
+    "url": "https://www.youtube.com/channel/UCtIGSt6iI8UzmM66dNWICjw",
+    "langages": ["html", "css", "javascript", "php"],
+    "frameworks": ["vuejs"],
+    "outils": [],
+    "autre": []
+  },
+  {
     "url": "https://www.youtube.com/channel/UCuWaYcB0E0WyFjbvu7dalVw",
     "langages": ["html", "css", "javascript"],
     "frameworks": ["pwa", "react", "gatsby", "bulma"],
