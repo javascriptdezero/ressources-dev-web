@@ -236,5 +236,12 @@
     "frameworks": ["react", "bootstrap", "bulma"],
     "outils": [],
     "autre": []
+  },
+  {
+    "url": "https://www.youtube.com/channel/UCuWaYcB0E0WyFjbvu7dalVw",
+    "langages": ["html", "css", "javascript"],
+    "frameworks": ["pwa", "react", "gatsby", "bulma"],
+    "outils": ["webpack"],
+    "autre": ["bonnes pratiques", "conseils & astuces", "freelance", "formation"]
   }
 ]
