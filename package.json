@@ -4,7 +4,7 @@
   "description": "Toutes les ressources pour apprendre le développement web sur un unique site",
   "main": "generer-donnees-enrichies.js",
   "dependencies": {
-    "google-auth-library": "^3.1.0",
+    "google-auth-library": "^3.1.2",
     "googleapis": "^43.0.0"
   },
   "devDependencies": {},
