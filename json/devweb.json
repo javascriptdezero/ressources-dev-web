@@ -250,5 +250,12 @@
     "frameworks": ["pwa", "react", "gatsby", "bulma"],
     "outils": ["webpack"],
     "autre": ["bonnes pratiques", "conseils & astuces", "freelance", "formation"]
+  },
+  {
+    "url": "https://www.youtube.com/channel/UCo2zkK2d_frGSXctIkftALw",
+    "langages": ["python"],
+    "frameworks": ["django"],
+    "outils": ["pycharm"],
+    "autre": ["conseils & astuces", "formation", "bonnes pratiques"]
   }
 ]
