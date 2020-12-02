@@ -52,7 +52,7 @@ fs.readFile(FICHIER_CLE_API, (err, cleApi) => {
 
 // On formate les grands nombres par blocs de 3 chiffres donc 13178 devient 13 178 pour une meilleure lisibilité
 function ajouterEspacesDansNombre(number) {
-  return number.replace(/(\d)(?=(\d{3})+$)/g, '$1 ');
+  return number === undefined ? "N/A" : number.replace(/(\d)(?=(\d{3})+$)/g, '$1 ');
 }
 
 function demarrer(cleApi) {
@@ -155,7 +155,7 @@ function demarrer(cleApi) {
           chaine.nombreVues = ajouterEspacesDansNombre(donneesChaine.statistics.viewCount);
           chaine.nombreAbonnes = ajouterEspacesDansNombre(donneesChaine.statistics.subscriberCount);
           chaine.nombreVideos = ajouterEspacesDansNombre(donneesChaine.statistics.videoCount);
-          
+
           // On ajoute la chaîne enrichie à l'objet donneesJson qui permettra de générer le fichier final
           donneesJson.push(chaine);
         });
