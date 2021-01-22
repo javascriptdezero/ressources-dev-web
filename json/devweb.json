@@ -257,5 +257,12 @@
     "frameworks": ["django"],
     "outils": ["pycharm"],
     "autre": ["conseils & astuces", "formation", "bonnes pratiques"]
+  },
+  {
+    "url": "https://www.youtube.com/channel/UCl-eoZ97KHBFuiy2CxxI2YA",
+    "langages": ["php"],
+    "frameworks": ["symfony", "react"],
+    "outils": ["docker"],
+    "autre": ["conseils & astuces", "formation", "bonnes pratiques"]
   }
 ]
