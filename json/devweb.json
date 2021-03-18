@@ -285,5 +285,12 @@
     "frameworks": [],
     "outils": ["vscode"],
     "autre": []
+  },
+  {
+    "url": "https://www.youtube.com/channel/UC9RqnWGripL5L3lxH-fEZjg",
+    "langages": ["javascript", "css", "html"],
+    "frameworks": [],
+    "outils": ["vscode", "figma"],
+    "autre": []
   }
 ]
