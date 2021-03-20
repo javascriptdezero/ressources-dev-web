@@ -292,5 +292,12 @@
     "frameworks": [],
     "outils": ["vscode", "figma"],
     "autre": []
+  },
+  {
+    "url": "https://www.youtube.com/channel/UCRlsJWh1XwmNGxZPFgJ0Zlw",
+    "langages": ["php"],
+    "frameworks": ["symfony", "bootstrap"],
+    "outils": ["vscode", "docker", "webpack", "gitlab"],
+    "autre": []
   }
 ]
