@@ -299,5 +299,12 @@
     "frameworks": ["symfony", "bootstrap"],
     "outils": ["vscode", "docker", "webpack", "gitlab"],
     "autre": []
+  },
+  {
+    "url": "https://www.youtube.com/channel/UCEvgUSS6r70F0cFcYkJ5MpQ",
+    "langages": ["php"],
+    "frameworks": ["laravel"],
+    "outils": ["laragon"],
+    "autre": ["conseils & astuces"]
   }
 ]
