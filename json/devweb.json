@@ -306,5 +306,12 @@
     "frameworks": ["laravel"],
     "outils": ["laragon"],
     "autre": ["conseils & astuces"]
+  },
+  {
+    "url": "https://www.youtube.com/channel/UCBH-5ctALmmOrm4kczL3urQ",
+    "langages": ["html","css","javascript"],
+    "frameworks": ["vue"],
+    "outils": ["vscode"],
+    "autre": ["conseils & astuces"]
   }
 ]
