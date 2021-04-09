@@ -313,5 +313,12 @@
     "frameworks": ["vue"],
     "outils": ["vscode"],
     "autre": ["conseils & astuces"]
+  },
+  {
+    "url": "https://www.youtube.com/channel/UCZbHKK6Dwly0vfut8w2JhZQ",
+    "langages": ["javascript"],
+    "frameworks": ["vue"],
+    "outils": ["vscode"],
+    "autre": ["formation"]
   }
 ]
