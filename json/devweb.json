@@ -323,9 +323,9 @@
   },
   {
     "url": "https://youtube.com/channel/UCEahso5BguAfk1jWdyvti7w",
-    "langages": ["typescript"],
-    "frameworks": ["svelte","sapper","nodejs","tailwindcss"],
+    "langages": ["typescript","css","html","javascript"],
+    "frameworks": ["svelte","sapper","nodejs","tailwindcss","mocha","chai"],
     "outils": ["vscode","github","vercel","GCP"],
-    "autre": ["devlog","clean architecture","tdd","approche produit"]
-  }
+    "autre": ["devlog","clean architecture","tdd","approche produit","clean code","product management","design","UX","UI","architecture logicielle"]
+}
 ]
