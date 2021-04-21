@@ -320,5 +320,12 @@
     "frameworks": ["vue"],
     "outils": ["vscode"],
     "autre": ["formation"]
+  },
+  {
+    "url": "https://youtube.com/channel/UCEahso5BguAfk1jWdyvti7w",
+    "langages": ["typescript"],
+    "frameworks": ["svelte","sapper","nodejs","tailwindcss"],
+    "outils": ["vscode","github","vercel","GCP"],
+    "autre": ["devlog","clean architecture","tdd","approche produit"]
   }
 ]
