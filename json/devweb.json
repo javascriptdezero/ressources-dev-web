@@ -327,5 +327,12 @@
     "frameworks": ["svelte","sapper","nodejs","tailwindcss","mocha","chai"],
     "outils": ["vscode","github","vercel","GCP"],
     "autre": ["devlog","clean architecture","tdd","approche produit","clean code","product management","design","UX","UI","architecture logicielle"]
-}
+  },
+  {
+    "url": "https://www.youtube.com/channel/UCUZcVUeCtPbcsPGMU6icxUQ",
+    "langages": ["react", "typescript", "node"],
+    "frameworks": [],
+    "outils": ["github"],
+    "autre": ["recrutement", "jobs", "open-source", "développement personnel"]
+  }
 ]
