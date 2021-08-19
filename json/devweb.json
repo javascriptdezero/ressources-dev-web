@@ -334,5 +334,12 @@
     "frameworks": [],
     "outils": ["github"],
     "autre": ["recrutement", "jobs", "open-source", "développement personnel"]
+  },
+  {
+    "url": "https://www.youtube.com/channel/UCVPd3h_V_hGjMZ8jNMt939Q",
+    "langages": ["html", "css", "php", "javascript"],
+    "frameworks": ["symfony", "laravel"],
+    "outils": ["vscode", "github"],
+    "autre": ["formation"]
   }
 ]
