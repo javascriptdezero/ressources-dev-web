@@ -341,5 +341,12 @@
     "frameworks": ["symfony", "laravel"],
     "outils": ["vscode", "github"],
     "autre": ["formation"]
+  },
+  {
+    "url": "https://www.youtube.com/channel/UCzsIm81pLYinjhfjDsFZ-aA",
+    "langages": ["php", "javascript", "html", "css"],
+    "frameworks": ["laravel", "tailwindcss", "vue"],
+    "outils": ["phpstorm", "vscode", "wordpress"],
+    "autre": ["formation", "bonnes pratiques", "conseils & astuces"]
   }
 ]
