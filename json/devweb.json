@@ -348,5 +348,6 @@
     "frameworks": ["laravel", "tailwindcss", "vue"],
     "outils": ["phpstorm", "vscode", "wordpress"],
     "autre": ["formation", "bonnes pratiques", "conseils & astuces"]
-  }
+  },
+  {"url": "https://www.youtube.com/channel/UCMLVr2Jb92Uu53ujFyq8tBQ", "langages": ["html", "css", "javascript", "python"], "frameworks": ["react", "angular", "ionic"], "outils": ["git", "docker", "gitlab"], "autre": ["formation"]}
 ]
